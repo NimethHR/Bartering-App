@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="ShapeAppearance.MADProject.TextBubble" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+    <style name="ShapeAppearance.MADProject.AttachedItemRight" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+    </style>
+    <style name="ShapeAppearance.MADProject.AttachedItemLeft" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+    </style>
+
+</resources>
