@@ -58,19 +58,10 @@
                 android:layout_toEndOf="@+id/imageView"
                 app:icon="@android:drawable/ic_menu_edit"
 
-                android:visibility="visible"/>
+                />
 
 
         </RelativeLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change Picture"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_gravity="center"
-
-            android:visibility="gone"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,24 +71,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
 
-            android:visibility="visible">
+            >
         </TextView>
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_marginTop="20dp"
-
-            android:visibility="gone">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Group Name"
-                android:text="This is group name"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -108,46 +84,7 @@
             android:textSize="15dp"
             android:justificationMode="inter_word"
 
-            android:visibility="visible"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_marginTop="20dp"
-
-            android:visibility="gone">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Group Description"
-                android:text="@string/lorem"
-                android:inputType="textMultiLine"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:layout_marginTop="20dp"
-
-            android:visibility="gone">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:layout_marginRight="15dp"
-            style="@style/Widget.Material3.Button.OutlinedButton"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save Changes"/>
-
-        </LinearLayout>
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,7 +92,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="20dp"
 
-            android:visibility="visible">
+            >
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
