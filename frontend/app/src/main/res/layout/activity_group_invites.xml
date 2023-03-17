@@ -27,21 +27,21 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Groups" />
+            android:text="@string/groups_tablayout_groups" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Invites" />
+            android:text="@string/groups_tablayout_Invites" />
     </com.google.android.material.tabs.TabLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:context=".Groups"
             android:orientation="vertical">
 
@@ -49,18 +49,18 @@
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -68,37 +68,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -106,23 +106,22 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -130,37 +129,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -168,23 +167,22 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -192,37 +190,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -230,23 +228,22 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -254,37 +251,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -292,23 +289,22 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -316,37 +312,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -354,23 +350,22 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -378,37 +373,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -416,23 +411,22 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/groups_card_spacing">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="@dimen/groups_card_margin_h"
+                    android:layout_marginVertical="@dimen/groups_card_margin_v"
                     android:orientation="horizontal">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/profile_image_small"
+                        android:layout_height="@dimen/profile_image_small"
                         android:layout_gravity="center"
                         app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                         tools:srcCompat="@tools:sample/avatars" />
@@ -440,37 +434,37 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="@dimen/groups_card_text_margin"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="This is group Name"
+                            android:text="@string/default_group_name"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
+                            android:text="@string/default_group_description" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/groups_card_button_margin">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
+                                android:text="@string/groups_btn_accept"
+                                android:layout_marginEnd="@dimen/groups_card_button_spacing"/>
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deny"
+                                android:text="@string/groups_btn_reject"
                                 style="@style/Widget.Material3.Button.OutlinedButton" />
                         </LinearLayout>
 
@@ -479,67 +473,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                style="@style/Widget.Material3.CardView.Elevated"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="20dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                        tools:srcCompat="@tools:sample/avatars" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="This is group Name"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="this is group description. this is group description. this is group description......." />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="10dp">
-
-                            <Button
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Accept"
-                                android:layout_marginRight="10dp"/>
-
-                            <Button
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Deny"
-                                style="@style/Widget.Material3.Button.OutlinedButton" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>

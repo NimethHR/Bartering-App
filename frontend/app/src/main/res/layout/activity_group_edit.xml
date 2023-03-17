@@ -23,25 +23,25 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/group_view_margin_t"
         android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/group_view_margin_h"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="@dimen/profile_image_large"
                 android:layout_gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imageView"
-                    android:layout_width="125dp"
-                    android:layout_height="125dp"
+                    android:layout_width="@dimen/profile_image_large"
+                    android:layout_height="@dimen/profile_image_large"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="0dp"
@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Change Picture"
+                android:text="@string/group_edit_btn_change_picture"
 
                 />
 
@@ -65,29 +65,29 @@
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/group_view_item_spacing"
 
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Group Name"
-                    android:text="This is group name" />
+                    android:hint="@string/group_edit_txt_group_name"
+                    android:text="@string/default_group_name" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/group_view_item_spacing"
 
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Group Description"
+                    android:hint="@string/group_edit_txt_group_description"
                     android:inputType="textMultiLine"
                     android:text="@string/lorem" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,8 +95,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/group_view_item_spacing"
                 android:orientation="horizontal"
 
                 >
@@ -105,13 +105,13 @@
                     style="@style/Widget.Material3.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:text="Cancel" />
+                    android:layout_marginEnd="@dimen/group_view_button_spacing"
+                    android:text="@string/group_edit_btn_cancel" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Save Changes" />
+                    android:text="@string/group_edit_btn_save" />
 
             </LinearLayout>
 
