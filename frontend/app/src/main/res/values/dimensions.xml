@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="small_medium">15dp</dimen>
+    <dimen name="small_medium">150dp</dimen>
+    <dimen name="padding_small_small">15dp</dimen>
+    <dimen name="posts_window">650dp</dimen>
 </resources>
