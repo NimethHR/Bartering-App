@@ -1,6 +1,7 @@
 package com.example.madproject.posts
 
-class CreatePost {
+import android.R
 
+class CreatePost {
 
 }
