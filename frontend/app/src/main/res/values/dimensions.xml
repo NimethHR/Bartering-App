@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="small_medium">150dp</dimen>
-    <dimen name="padding_small_small">15dp</dimen>
+    <dimen name="padding_small_small">50dp</dimen>
+    <dimen name="small_margin">15dp</dimen>
     <dimen name="posts_window">550dp</dimen>
+    <dimen name="medium_button">250dp</dimen>
+    <dimen name="horizontal_space">25dp</dimen>
+
 </resources>

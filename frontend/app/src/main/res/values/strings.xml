@@ -4,5 +4,18 @@
     <string name="createBtn">Post Name</string>
     <string name="post_title">Post title here</string>
     <string name="post_create_toolbar">Create Post</string>
+    <string name="create_nestedScroll_description">Create your post here</string>
+    <string name="create_tab1">Image</string>
+    <string name="create_tab2">Post</string>
+    <string name="create_tab3">Location</string>
+    <string name="create_post_title">Post Title</string>
+    <string name="create_post_file_picker_button">Browse</string>
+    <string name="create_post_description">Post Description</string>
+    <string name="create_file_picker">Pick images to Upload</string>
+    <string name="create_location_picker">Select Location</string>
+    <string name="create_post_location_picker_button">Browse</string>
+
+    <string name="post_type_need">Need</string>
+    <string name="post_type_have">Have</string>
 
 </resources>
