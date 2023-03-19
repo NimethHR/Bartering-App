@@ -37,4 +37,10 @@
 
     <!--  Post Sample Data  -->
     <string name="sample_post_1">One piece 6ft Red Fabric Sofa</string>
+    <string name="sample_post_2">Casual deck shoes</string>
+    <string name="sample_post_3">Painting Equipment</string>
+    <string name="sample_post_4">Nissan Skyline r34</string>
+    <string name="sample_post_5">Studio Mic</string>
+    <string name="sample_post_6">Ful table set</string>
+
 </resources>
