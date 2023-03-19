@@ -7,4 +7,6 @@
     <dimen name="medium_button">250dp</dimen>
     <dimen name="horizontal_space">15dp</dimen>
 
+    <!--  post dimens  -->
+    <dimen name="view_post_height">200dp</dimen>
 </resources>

@@ -4,4 +4,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">30dp</item>
     </style>
+
+    <style name="like_btn">
+        <item name="colorAccent">@color/design_default_color_error</item>
+        <item name="android:background">@color/holo_red</item>
+    </style>
 </resources>

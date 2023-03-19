@@ -42,20 +42,6 @@
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/small_margin"
-
-                android:hint="@string/create_post_title">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -66,6 +52,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/small_medium"
+                    android:text="@string/lorem"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +60,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="65dp"
                 app:cardCornerRadius="8dp"                >
 
                 <LinearLayout
@@ -86,19 +73,19 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/padding_small_small"
-                        android:layout_marginRight="110dp"
+                        android:layout_marginRight="60dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="15dp"
                         android:text="@string/create_file_picker"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <Button
+                        <Button
                         android:id="@+id/file_browse_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/edit_file_picker" />
 
-                        android:text="@string/create_post_file_picker_button" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -187,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/create_post_submit_btn" />
+                android:text="@string/edit_post_submit_btn" />
 
         </LinearLayout>
 

@@ -11,14 +11,30 @@
     <string name="create_post_title">Post Title</string>
     <string name="create_post_file_picker_button">Browse</string>
     <string name="create_post_description">Post Description</string>
-    <string name="create_file_picker">Pick images to Upload</string>
     <string name="create_location_picker">Select Location</string>
     <string name="create_post_location_picker_button">Browse</string>
+    <string name="create_post_quantity_select_btn">Quantity</string>
+    <string name="create_post_quantity_select">Enter Quantity: </string>
 
-<!--  Post Types  -->
+
+    <!--  Post Types  -->
     <string name="post_type_need">Need</string>
     <string name="post_type_have">Have</string>
     <string name="post_type_donate">Free</string>
 
+    <!--buttons-->
+    <string name="create_post_submit_btn">Upload Post</string>
+    <string name="edit_post_submit_btn">Edit Post</string>
+    <string name="view_post_like_btn">Like</string>
+    <string name="view_post_contact_btn">Contact</string>
+    <string name="view_post_share_btn">Share</string>
 
+
+    <!--  messages  -->
+    <string name="edit_post_image">Cannot edit uploaded images</string>
+    <string name="create_file_picker">Pick images to Upload</string>
+    <string name="edit_file_picker">Edit images</string>
+
+    <!--  Post Sample Data  -->
+    <string name="sample_post_1"> One piece 6ft Red Fabric Sofa</string>
 </resources>
