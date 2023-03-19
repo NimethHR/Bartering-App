@@ -15,7 +15,10 @@
     <string name="create_location_picker">Select Location</string>
     <string name="create_post_location_picker_button">Browse</string>
 
+<!--  Post Types  -->
     <string name="post_type_need">Need</string>
     <string name="post_type_have">Have</string>
+    <string name="post_type_donate">Free</string>
+
 
 </resources>

@@ -1,7 +1,12 @@
 package com.example.madproject.posts
 
-import android.R
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.madproject.R
 
-class CreatePost {
-
+class CreatePost : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_create_post)
+    }
 }
