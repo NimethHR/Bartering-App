@@ -27,4 +27,8 @@
         <item name="cardBackgroundColor">#83CD86</item>
     </style>
 
+    <style name="view_post_background">
+        <item name="android:background">#95ABB1A9</item>
+
+    </style>
 </resources>
