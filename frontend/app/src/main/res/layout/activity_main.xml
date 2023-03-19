@@ -44,11 +44,26 @@
         app:shapeAppearanceOverlay="@style/fab_btn"
         app:srcCompat="@drawable/baseline_add_circle_24" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/posts_window"
-        android:scrollbars="vertical"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

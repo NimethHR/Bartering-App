@@ -6,7 +6,6 @@
     </style>
 
     <style name="like_btn">
-        <item name="colorAccent">@color/design_default_color_error</item>
-        <item name="android:background">@color/holo_red</item>
+        <item name="colorContainer">#E83B3B</item>
     </style>
 </resources>
