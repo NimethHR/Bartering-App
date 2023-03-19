@@ -2,13 +2,17 @@
     <string name="app_name">MADProject</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis consectetur sapien, vitae aliquam lectus fermentum vitae. Vestibulum nec sapien facilisis, malesuada elit sed, accumsan tellus. Quisque vitae laoreet lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at elit non ante vulputate dictum vulputate sit amet tortor. Quisque est enim, condimentum eget magna id, placerat condimentum mauris. Sed varius consectetur mattis. Donec placerat sed lacus eget rhoncus. Praesent id bibendum ante.</string>
     <string name="createBtn">Post Name</string>
-    <string name="post_title">Post title here</string>
-    <string name="post_create_toolbar">Create Post</string>
     <string name="create_nestedScroll_description">Create your post here</string>
     <string name="create_tab1">Image</string>
     <string name="create_tab2">Post</string>
     <string name="create_tab3">Location</string>
+
+
+<!--  Post actions  -->
+    <string name="post_title">Post title here</string>
+    <string name="edit_post">Edit Post</string>
     <string name="create_post_title">Post Title</string>
+    <string name="post_create_toolbar">Create Post</string>
     <string name="create_post_file_picker_button">Browse</string>
     <string name="create_post_description">Post Description</string>
     <string name="create_location_picker">Select Location</string>
@@ -28,6 +32,8 @@
     <string name="view_post_like_btn">Like</string>
     <string name="view_post_contact_btn">Contact</string>
     <string name="view_post_share_btn">Share</string>
+    <string name="cancel_btn">Cancel</string>
+
 
 
     <!--  messages  -->

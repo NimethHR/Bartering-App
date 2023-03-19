@@ -19,7 +19,7 @@
             app:titleTextColor="@color/white"
             android:background="@color/holo_red"
             app:menu="@menu/create_post_toolbar"
-            app:title="@string/post_create_toolbar">
+            app:title="@string/edit_post">
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -176,8 +176,21 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/edit_post_submit_btn" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/cancel_btn" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_bar"
+        android:layout_gravity="bottom"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

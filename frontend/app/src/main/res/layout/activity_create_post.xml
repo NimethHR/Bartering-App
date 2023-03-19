@@ -86,9 +86,9 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/padding_small_small"
-                        android:layout_marginRight="110dp"
+                        android:layout_marginRight="100dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="@string/create_file_picker"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -96,7 +96,7 @@
                         android:id="@+id/file_browse_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="7dp"
 
                         android:text="@string/create_post_file_picker_button" />
                 </LinearLayout>
@@ -189,10 +189,22 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/create_post_submit_btn" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/cancel_btn" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_bar"
+        android:layout_gravity="bottom"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
