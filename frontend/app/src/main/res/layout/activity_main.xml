@@ -7,21 +7,20 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/app_name"
-            android:background="?attr/colorPrimaryContainer"
-            app:menu="@menu/bottom_nav_bar"
-            app:titleTextColor="?attr/colorOnPrimaryContainer"/>
-    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/fragment_container"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_bar"/>
+        app:menu="@menu/bottom_nav_bar"
+        android:id="@+id/bottom_nav_bar"
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </LinearLayout>

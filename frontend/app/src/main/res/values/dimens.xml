@@ -7,7 +7,7 @@
     <!-- groups / group invites view  -->
     <dimen name="groups_card_spacing">10dp</dimen>
     <dimen name="groups_card_margin_h">10dp</dimen>
-    <dimen name="groups_card_margin_v">20dp</dimen>
+    <dimen name="groups_card_margin_v">10dp</dimen>
     <dimen name="groups_card_text_margin">20dp</dimen>
     <dimen name="groups_card_button_margin">10dp</dimen>
     <dimen name="groups_card_button_spacing">10dp</dimen>

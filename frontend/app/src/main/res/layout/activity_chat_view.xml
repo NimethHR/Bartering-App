@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="This is group name"
-            android:background="?attr/colorPrimaryContainer"
+            android:background="?attr/colorPrimaryInverse"
             app:menu="@menu/bottom_nav_bar"
             app:titleTextColor="?attr/colorOnPrimaryContainer"/>
     </com.google.android.material.appbar.AppBarLayout>
@@ -42,14 +42,15 @@
                     android:layout_height="@dimen/profile_image_small"
                     android:layout_gravity="bottom"
                     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:src="@mipmap/default_profile_image"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginStart="10dp"
-                    app:boxBackgroundColor="?attr/colorSecondary"
+                    app:boxBackgroundColor="?attr/colorPrimaryContainer"
                     app:boxCornerRadiusBottomEnd="20dp"
                     app:boxCornerRadiusBottomStart="0dp"
                     app:boxCornerRadiusTopEnd="20dp"
@@ -65,10 +66,9 @@
                         android:inputType="none"
                         android:padding="20dp"
                         android:text="@string/lorem"
-                        android:textColor="?attr/colorOnSecondary" />
+                        android:textColor="?attr/colorOnPrimaryContainer" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -80,14 +80,15 @@
                     android:layout_height="@dimen/profile_image_small"
                     android:layout_gravity="bottom"
                     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:src="@mipmap/default_profile_image"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginStart="10dp"
-                    app:boxBackgroundColor="?attr/colorSecondary"
+                    app:boxBackgroundColor="?attr/colorPrimaryContainer"
                     app:boxCornerRadiusBottomEnd="20dp"
                     app:boxCornerRadiusBottomStart="0dp"
                     app:boxCornerRadiusTopEnd="20dp"
@@ -103,10 +104,9 @@
                         android:inputType="none"
                         android:padding="20dp"
                         android:text="@string/lorem"
-                        android:textColor="?attr/colorOnSecondary" />
+                        android:textColor="?attr/colorOnPrimaryContainer" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -118,14 +118,15 @@
                     android:layout_height="@dimen/profile_image_small"
                     android:layout_gravity="bottom"
                     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:src="@mipmap/default_profile_image"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginStart="10dp"
-                    app:boxBackgroundColor="?attr/colorSecondary"
+                    app:boxBackgroundColor="?attr/colorPrimaryContainer"
                     app:boxCornerRadiusBottomEnd="20dp"
                     app:boxCornerRadiusBottomStart="0dp"
                     app:boxCornerRadiusTopEnd="20dp"
@@ -141,18 +142,57 @@
                         android:inputType="none"
                         android:padding="20dp"
                         android:text="@string/lorem"
-                        android:textColor="?attr/colorOnSecondary" />
+                        android:textColor="?attr/colorOnPrimaryContainer" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/chat_bubble_spacing"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/profile_image_small"
+                    android:layout_height="@dimen/profile_image_small"
+                    android:layout_gravity="bottom"
+                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:src="@mipmap/default_profile_image"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="10dp"
+                    app:boxBackgroundColor="?attr/colorPrimaryContainer"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:includeFontPadding="true"
+                        android:inputType="none"
+                        android:padding="20dp"
+                        android:text="@string/lorem"
+                        android:textColor="?attr/colorOnPrimaryContainer" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
@@ -173,7 +213,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            app:icon="@android:drawable/ic_menu_send"/>
+            app:icon="@android:drawable/ic_menu_send" />
     </LinearLayout>
 
 

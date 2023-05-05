@@ -2,11 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Home"
-        android:icon="@drawable/home"/>
+        android:icon="@drawable/home"
+        android:id="@+id/bottom_nav_bar_home"/>
     <item android:title="Post"
-        android:icon="@drawable/post"/>
+        android:icon="@drawable/post"
+        android:id="@+id/bottom_nav_bar_post"/>
     <item android:title="Groups"
-        android:icon="@drawable/groups"/>
+        android:icon="@drawable/groups"
+        android:id="@+id/bottom_nav_bar_groups"/>
     <item android:title="Profile"
-        android:icon="@drawable/profile"/>
+        android:icon="@drawable/profile"
+        android:id="@+id/bottom_nav_bar_profile"/>
+    <item android:title="Dashboard"
+        android:icon="@drawable/admin"
+        android:id="@+id/bottom_nav_bar_dashboard"/>
+
 </menu>

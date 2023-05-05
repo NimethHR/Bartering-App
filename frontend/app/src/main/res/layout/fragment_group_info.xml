@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupInfo"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragments.GroupInfoFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
+            app:menu="@menu/group_info_view_menu"
+            app:title="@string/default_group_name"
+            app:titleTextColor="?attr/colorOnPrimaryContainer"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="@string/default_group_name"
             android:background="?attr/colorPrimaryInverse"
-            app:menu="@menu/bottom_nav_bar"
-            app:titleTextColor="?attr/colorOnPrimaryContainer"/>
+            android:id="@+id/group_info_toolbar"
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
@@ -33,52 +36,34 @@
             android:layout_marginHorizontal="@dimen/group_view_margin_h"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/profile_image_large"
-                android:layout_gravity="center">
+
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imageView"
+                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                     android:layout_width="@dimen/profile_image_large"
                     android:layout_height="@dimen/profile_image_large"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="0dp"
-                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+                    android:src="@mipmap/default_profile_image"
                     tools:srcCompat="@tools:sample/avatars"
-                    android:src="@mipmap/default_profile_image"/>
-
-
-
-                <Button
-                    android:id="@+id/button"
-                    style="?attr/materialIconButtonFilledTonalStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginBottom="40dp"
-                    android:layout_toEndOf="@+id/imageView"
-                    app:icon="@android:drawable/ic_menu_edit"
-
+                    android:layout_gravity="center"
                     />
 
 
-            </RelativeLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/default_group_name"
-                android:textSize="@dimen/text_size_h2"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/group_view_item_spacing"
+                android:text="loading..."
+                android:textSize="@dimen/text_size_h2"
+                android:id="@+id/tv_group_view_name"
 
-                >
-            </TextView>
+                ></TextView>
 
 
             <TextView
@@ -86,49 +71,48 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/group_view_item_spacing"
-                android:text="@string/default_group_description"
-                android:textSize="@dimen/text_size_h3"
                 android:justificationMode="inter_word"
+                android:text="loading..."
+                android:textSize="@dimen/text_size_h3"
+                android:id="@+id/tv_group_view_description"
 
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/group_view_item_spacing"
+                android:orientation="horizontal"
 
                 >
 
                 <com.google.android.material.textfield.TextInputLayout
+                    app:shapeAppearance="@style/ShapeAppearance.MADProject.AttachedItemLeft"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    app:shapeAppearance="@style/ShapeAppearance.MADProject.AttachedItemLeft">
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawableEnd="?android:attr/actionModeWebSearchDrawable"
-                        android:hint="@string/group_info_txt_search_username" />
+                        android:hint="@string/group_info_txt_search_username"
+                        android:id="@+id/et_group_view_invite"
+                        />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_group_view_invite"
+                    app:shapeAppearance="@style/ShapeAppearance.MADProject.AttachedItemRight"
                     android:layout_width="wrap_content"
                     android:layout_height="66dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="2.8dp"
-                    android:text="@string/group_info_btn_invite"
-                    app:shapeAppearance="@style/ShapeAppearance.MADProject.AttachedItemRight" />
+                    android:text="@string/group_info_btn_invite" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_bar"
-        android:background="?attr/colorPrimaryInverse"
-        />
 </LinearLayout>
+</layout>
