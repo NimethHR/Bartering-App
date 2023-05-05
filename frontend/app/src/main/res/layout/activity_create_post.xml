@@ -16,8 +16,8 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/white"
-            android:background="@color/holo_red"
+            app:titleTextColor="@color/black"
+            android:background="?attr/colorPrimaryInverse"
             app:menu="@menu/create_post_toolbar"
             app:title="@string/post_create_toolbar">
 
@@ -38,14 +38,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="@dimen/small_small_padding"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/text_margin"
 
                 android:hint="@string/create_post_title">
 
@@ -60,12 +60,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/text_margin"
                 android:hint="@string/create_post_description">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/small_medium"
+                    android:layout_height="@dimen/create_text_field_width"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -73,31 +73,31 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:cardCornerRadius="8dp"                >
+                android:layout_height="@dimen/container_height_1"
+                app:cardCornerRadius="@dimen/small_corner"                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="@dimen/container_height_1"
                     android:layout_marginBottom="@dimen/horizontal_space"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/padding_small_small"
-                        android:layout_marginRight="100dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_height="@dimen/container_height_2"
+                        android:layout_marginRight="@dimen/large_medium__margin"
+                        android:layout_marginTop="@dimen/small_small_padding"
+                        android:layout_marginLeft="@dimen/small_small_padding"
                         android:text="@string/create_file_picker"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                     <Button
                         android:id="@+id/file_browse_btn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/large_medium__margin"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
-
+                        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                         android:text="@string/create_post_file_picker_button" />
                 </LinearLayout>
 
@@ -106,15 +106,15 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_marginTop="15dp"
-                android:layout_height="60dp"
+                android:layout_height="@dimen/container_height_1"
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="@dimen/small_small_padding"
+                    android:layout_marginTop="@dimen/text_margin"
                     tools:layout_editor_absoluteX="1dp"
                     tools:layout_editor_absoluteY="1dp"
                     android:layout_marginBottom="@dimen/horizontal_space">
@@ -124,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:paddingLeft="@dimen/small_margin"
+                        android:paddingLeft="@dimen/text_margin"
                         android:text="@string/post_type_have" />
 
                     <RadioButton
@@ -148,7 +148,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/text_margin"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -159,7 +159,7 @@
 
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="148dp"
+                        android:layout_width="@dimen/custom_quantity_container_1"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="@string/create_post_quantity_select"
@@ -172,8 +172,8 @@
                         android:id="@+id/editTextNumberDecimal2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="70dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="@dimen/container_height_3"
+                        android:layout_marginBottom="@dimen/small_small_padding"
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="numberDecimal" />
@@ -186,14 +186,15 @@
                 android:id="@+id/upload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/small_medium_padding"
                 android:text="@string/create_post_submit_btn" />
 
             <Button
-                android:id="@+id/canc"
+                android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:text="@string/cancel_btn" />
 
         </LinearLayout>

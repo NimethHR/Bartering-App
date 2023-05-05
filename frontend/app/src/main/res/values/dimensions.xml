@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="small_medium">150dp</dimen>
-    <dimen name="padding_small_small">50dp</dimen>
-    <dimen name="small_margin">15dp</dimen>
+
+    <!--    general-->
     <dimen name="posts_window">550dp</dimen>
     <dimen name="medium_button">250dp</dimen>
     <dimen name="horizontal_space">15dp</dimen>
 
+    <!-- Heights and widths   -->
+    <dimen name="container_height_1">60dp</dimen>
+    <dimen name="container_height_2">50dp</dimen>
+    <dimen name="container_height_3">70dp</dimen>
+    <dimen name="create_text_field_width">150dp</dimen>
+    <dimen name="button_type_1_width">130dp</dimen>
+    <dimen name="custom_quantity_container_1">148dp</dimen>
+
+
     <!--  post dimens  -->
     <dimen name="view_post_height">200dp</dimen>
+
+    <!--  padding and margins  -->
+    <dimen name="small_small_padding">10dp</dimen>
+    <dimen name="small_small_margin">5dp</dimen>
+    <dimen name="text_margin">15dp</dimen>
+    <dimen name="small_medium_padding">20dp</dimen>
+    <dimen name="padding_small_small">50dp</dimen>
+    <dimen name="large_medium__margin">100dp</dimen>
+
+    <!-- Corners -->
+    <dimen name="small_corner">8dp</dimen>
+
 </resources>

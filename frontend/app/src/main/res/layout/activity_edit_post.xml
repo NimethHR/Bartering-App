@@ -16,8 +16,8 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/white"
-            android:background="@color/holo_red"
+            app:titleTextColor="@color/black"
+            android:background="?attr/colorPrimaryInverse"
             app:menu="@menu/create_post_toolbar"
             app:title="@string/edit_post">
 
@@ -46,12 +46,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/text_margin"
                 android:hint="@string/create_post_description">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/small_medium"
+                    android:layout_height="@dimen/create_text_field_width"
                     android:text="@string/lorem"
                     />
 
@@ -80,11 +80,13 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                         <Button
+
                         android:id="@+id/file_browse_btn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/button_type_1_width"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="@string/edit_file_picker" />
+                            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:text="@string/edit_file_picker"/>
 
                 </LinearLayout>
 
@@ -111,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:paddingLeft="@dimen/small_margin"
+                        android:paddingLeft="@dimen/text_margin"
                         android:text="@string/post_type_have" />
 
                     <RadioButton
@@ -174,13 +176,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/edit_post_submit_btn" />
+                android:text="@string/edit_post_submit_btn"/>
 
             <Button
                 android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                 android:text="@string/cancel_btn" />
 
         </LinearLayout>

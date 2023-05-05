@@ -16,8 +16,8 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/white"
-            android:background="@color/holo_red"
+            app:titleTextColor="@color/black"
+            android:background="?attr/colorPrimaryInverse"
             app:menu="@menu/create_post_toolbar"
             app:title="@string/post_type_need">
 
@@ -91,7 +91,8 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginLeft="@dimen/small_small_padding"
+                            android:layout_marginTop="@dimen/small_small_padding"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -102,19 +103,23 @@
 
 
                         <com.google.android.material.button.MaterialButton
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginLeft="@dimen/small_small_padding"
+                            android:layout_marginTop="@dimen/small_small_padding"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/view_post_contact_btn" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginLeft="@dimen/small_small_margin"
+                            android:layout_marginTop="@dimen/small_small_padding"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/view_post_share_btn"
-                            android:layout_marginRight="5dp"
+                            android:layout_marginRight="@dimen/small_small_padding"
                             app:icon="@drawable/baseline_share_24"
                             app:iconGravity="textStart"/>
 
@@ -128,10 +133,10 @@
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="20dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="@dimen/small_small_padding"
+                            android:layout_marginBottom="@dimen/small_medium_padding"
+                            android:layout_marginLeft="@dimen/small_medium_padding"
+                            android:layout_marginRight="@dimen/small_medium_padding"
                             android:text="@string/lorem">
                         </com.google.android.material.textview.MaterialTextView>
 
