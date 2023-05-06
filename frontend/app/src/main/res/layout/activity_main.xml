@@ -2,25 +2,82 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
 
 
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="10dp"
+    tools:context=".MainActivity">
 
-    <FrameLayout
+    <TextView
+        android:id="@+id/pEditTitle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/fragment_container"/>
+        android:layout_height="@dimen/login_title_height"
+        android:text="@string/login_title"
+        android:textAlignment="center"
+        android:textSize="34sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_bar"
-        android:id="@+id/bottom_nav_bar"
-        >
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:boxBackgroundMode="none">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_input_height"
+
+            android:background="#E7A0F3"
+            android:backgroundTint="#EED7FD"
+            android:drawableLeft="@drawable/baseline_person_outline_24"
+            android:hint="@string/login_register_username"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+
+        android:id="@+id/reg_pwd1"
+        android:layout_width="379dp"
+        android:layout_height="@dimen/text_input_height"
+        android:background="#CBF9FF"
+        android:backgroundTint="#EED7FD"
+        android:drawableLeft="@drawable/baseline_info_24"
+        android:ems="10"
+        android:hint="@string/login_register_password"
+        android:inputType="textPassword"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/frgt_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:text="Forgot Password ?"
+        android:textAlignment="viewEnd"
+
+        />
+
+    <Button
+        android:id="@+id/regBtn"
+        android:layout_width="276dp"
+        android:layout_height="91dp"
+        android:insetLeft="@dimen/Login_button_left"
+        android:insetTop="@dimen/form_button_top"
+        android:insetBottom="6dp"
+        android:text="@string/login_button"
+        android:visibility="visible"
+        app:cornerRadius="20dp"
+
+        />
+
 </LinearLayout>

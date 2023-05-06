@@ -1,7 +1,6 @@
 {
   "project_info": {
     "project_number": "475079939072",
-    "firebase_url": "https://mad-bartering-app-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "mad-bartering-app",
     "storage_bucket": "mad-bartering-app.appspot.com"
   },
@@ -10,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:475079939072:android:c81b0fb3da61eb84e6f4e5",
         "android_client_info": {
-          "package_name": "com.example.madproject"
+          "package_name": "com.example.userui"
         }
       },
       "oauth_client": [
