@@ -22,6 +22,18 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
                     true
                 }
+                R.id.bottom_nav_bar_profile -> {
+                    true
+                }
+                R.id.bottom_nav_bar_dashboard -> {
+                    true
+                }
+                R.id.bottom_nav_bar_post -> {
+                    true
+                }
+                R.id.bottom_nav_bar_home -> {
+                    true
+                }
                 else -> false
             }
         }
