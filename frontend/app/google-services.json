@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "475079939072",
+    "firebase_url": "https://mad-bartering-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mad-bartering-app",
+    "storage_bucket": "mad-bartering-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475079939072:android:c81b0fb3da61eb84e6f4e5",
+        "android_client_info": {
+          "package_name": "com.example.madproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475079939072-dqbi248qfo8p2ide7l4dpp71qfeo88re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ7KZWPbmzUK9Tu_ld3ExwDnWNFfT1aiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475079939072-9ns380294cputtkmpfseo42thf6jsfhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
