@@ -39,7 +39,7 @@
 
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/iv_group_image"
                     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                     android:layout_width="@dimen/profile_image_large"
                     android:layout_height="@dimen/profile_image_large"

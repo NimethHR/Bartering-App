@@ -44,36 +44,8 @@
             android:padding="10dp"
             >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/profile_image_large"
-            android:layout_gravity="center">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView"
-                android:layout_width="@dimen/profile_image_large"
-                android:layout_height="@dimen/profile_image_large"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="0dp"
-                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                tools:srcCompat="@tools:sample/avatars"
-                android:src="@mipmap/default_profile_image"/>
-
-
-        </RelativeLayout>
-
-        <Button
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Add Picture"
-
-            />
-
-
-        <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

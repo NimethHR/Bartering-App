@@ -41,7 +41,7 @@
                 android:layout_gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/iv_edit_group_image"
                     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                     android:layout_width="@dimen/profile_image_large"
                     android:layout_height="@dimen/profile_image_large"
@@ -49,7 +49,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="0dp"
                     android:src="@mipmap/default_profile_image"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    />
 
 
             </RelativeLayout>
@@ -60,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/group_edit_btn_change_picture"
+                android:id="@+id/btn_edit_group_change_picture"
 
                 />
 

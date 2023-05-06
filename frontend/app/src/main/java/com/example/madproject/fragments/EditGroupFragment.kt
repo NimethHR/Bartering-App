@@ -1,6 +1,11 @@
 package com.example.madproject.fragments
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +13,7 @@ import android.view.ViewGroup
 import com.example.madproject.R
 import com.example.madproject.databinding.FragmentEditGroupBinding
 import com.example.madproject.util.DatabaseFunctions
+import com.example.madproject.util.StorageFunctions
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +31,7 @@ class EditGroupFragment : Fragment() {
     private var id: String? = null
     private var name: String? = null
     private var description: String? = null
+    private var fileUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +56,7 @@ class EditGroupFragment : Fragment() {
             val newDescription = binding.etEditGroupDescription.text.toString()
 
             DatabaseFunctions.updateGroup(id ?: return@setOnClickListener, newDescription)
+            StorageFunctions.uploadImage(fileUri ?: return@setOnClickListener, "groups", id ?: return@setOnClickListener)
             activity?.onBackPressed()
         }
 
@@ -56,7 +64,25 @@ class EditGroupFragment : Fragment() {
             activity?.onBackPressed()
         }
 
+        binding.btnEditGroupChangePicture.setOnClickListener() {
+            val intent = Intent()
+            intent.type = "image/*"
+            intent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(Intent.createChooser(intent,"Select Picture"), 22)
+
+        }
+
         return binding.root
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val binding : FragmentEditGroupBinding = FragmentEditGroupBinding.inflate(layoutInflater)
+        if (requestCode == 22 && resultCode == RESULT_OK && data != null && data.data != null) {
+            fileUri = data.data
+            val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, fileUri)
+            binding.ivEditGroupImage.setImageBitmap(bitmap)
+        }
     }
 
     companion object {
