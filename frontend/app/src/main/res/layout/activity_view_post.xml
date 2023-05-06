@@ -91,15 +91,16 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:layout_marginLeft="@dimen/small_small_padding"
-                            android:layout_marginTop="@dimen/small_small_padding"
+                            android:id="@+id/likeBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/small_small_padding"
+                            android:layout_marginTop="@dimen/small_small_padding"
                             android:layout_weight="1"
-                            android:theme="@style/like_btn"
                             android:text="@string/view_post_like_btn"
+                            android:theme="@style/like_btn"
                             app:icon="@drawable/baseline_thumb_up_24"
-                            app:iconGravity="textStart"/>
+                            app:iconGravity="textStart" />
 
 
                         <com.google.android.material.button.MaterialButton
