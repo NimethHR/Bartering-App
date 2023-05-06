@@ -81,9 +81,10 @@
 
                     <ImageView
                         android:id="@+id/imageView1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/sample2_shoes"
+                        android:scaleType="centerCrop"
                         android:layout_marginBottom="5dp"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -119,7 +120,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/sample1_sofa"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
@@ -164,7 +167,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@drawable/table_set"
-                                android:layout_marginBottom="5dp"/>
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="centerCrop"
+                                />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -200,7 +205,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@drawable/sample3_paint"
-                                android:layout_marginBottom="5dp"/>
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="centerCrop"
+                                />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
@@ -243,7 +250,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@drawable/nissan_skyline"
-                                android:layout_marginBottom="5dp"/>
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="centerCrop"
+                                />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -281,7 +290,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@drawable/studio_mic"
-                                android:layout_marginBottom="5dp"/>
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="centerCrop"
+                                />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>

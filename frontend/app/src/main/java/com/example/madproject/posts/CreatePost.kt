@@ -2,20 +2,20 @@ package com.example.madproject.posts
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.R
+import com.example.madproject.models.Post
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.example.madproject.models.Post
+
 
 class CreatePost : AppCompatActivity() {
 
@@ -69,10 +69,10 @@ class CreatePost : AppCompatActivity() {
         }
 
         browseBtn.setOnClickListener {
-            val message = "Only .png .jpg  .webp images are supported"
-            val duration = Toast.LENGTH_LONG
-            val toast = Toast.makeText(this, message, duration)
-            toast.show()
+//            val message = "Only .png .jpg .webp images are supported"
+//            val duration = Toast.LENGTH_LONG
+//            val toast = Toast.makeText(this, message, duration)
+//            toast.show()
 
 //            val inflater: LayoutInflater = layoutInflater
 //            val layout: View = inflater.inflate(R.layout.toast, findViewById(R.id.custom_toast_container))
@@ -84,26 +84,30 @@ class CreatePost : AppCompatActivity() {
 //            toast.duration = Toast.LENGTH_LONG
 //            toast.view = layout
 //            toast.show()
+
+            val inflater: LayoutInflater = layoutInflater
+            val layout: View = inflater.inflate(R.layout.toast, findViewById(R.id.custom_toast_container))
+
+            val text: TextView = layout.findViewById(R.id.toast_text)
+            text.text = "Only .png .jpg  .webp images are supported"
+            val toast = Toast(applicationContext)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = layout
+            toast.show()
+
         }
     }
     private fun uploadData(){
         val db = Firebase.firestore
 
-
+        var documentId: String? = null
         val title = createPostTitle.text.toString()
         val desc = createPostDesc.text.toString()
-//        val quantity = createPostQuantity
         val number: Int = createPostQuantity.text.toString().toInt()
 
         if (title.isEmpty() || desc.isEmpty()){
             createPostTitle.error = "Please enter a value"
         }
-
-//        val post = hashMapOf(
-//            "title" to title,
-//            "description" to desc,
-//            "quantity" to number
-//        )
 
         val post = Post(title, desc,null , number)
 
@@ -111,11 +115,13 @@ class CreatePost : AppCompatActivity() {
             .add(post)
             .addOnSuccessListener { documentReference ->
                 Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                documentId = documentReference.id
             }
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)
             }
         val intent = Intent(this, ViewPost::class.java)
+        intent.putExtra("documentId", documentId)
         startActivity(intent)
     }
 }
