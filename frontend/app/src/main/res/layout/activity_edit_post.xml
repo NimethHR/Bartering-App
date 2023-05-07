@@ -97,18 +97,14 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_marginTop="15dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 >
 
-                <LinearLayout
+                <RadioGroup
+                    android:id="@+id/edit_radio_group"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    tools:layout_editor_absoluteX="1dp"
-                    tools:layout_editor_absoluteY="1dp"
-                    android:layout_marginBottom="@dimen/horizontal_space">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/haveRadioButton"
@@ -131,7 +127,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/post_type_donate" />
-                </LinearLayout>
+                </RadioGroup>
+
 
             </com.google.android.material.card.MaterialCardView>
 

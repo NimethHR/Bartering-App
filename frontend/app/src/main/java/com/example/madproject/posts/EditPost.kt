@@ -27,6 +27,8 @@ class EditPost : AppCompatActivity() {
     private lateinit var editQuantity: EditText
     private lateinit var radioGroup: RadioGroup
 
+    private var editTitle: String? = ""
+    private var likeCount: Int? = 0
 
 
     private  var documentId: String? = null
@@ -43,7 +45,6 @@ class EditPost : AppCompatActivity() {
         cancelBtn = findViewById(R.id.cancel_button)
         editDesc = findViewById(R.id.edit_post_desc)
         editQuantity = findViewById(R.id.editTextNumberDecimal2)
-
         radioButtonHave = findViewById(R.id.haveRadioButton)
         radioButtonNeed = findViewById(R.id.needRadioButton)
         radioButtonFree = findViewById(R.id.freeRadioButton)
@@ -73,7 +74,7 @@ class EditPost : AppCompatActivity() {
         }
 
         editBtn.setOnClickListener {
-
+            uploadData()
         }
 
     }
@@ -91,7 +92,8 @@ class EditPost : AppCompatActivity() {
 //                    val desc = result.getString("description")
 //                    val type = result.getString("type")
 //                    val quantity = result.getString("type")
-
+                    editTitle = post?.title
+                    likeCount = post?.likes
                     editDesc.setText(post?.description)
                     when (post?.type) {
                         "Have" -> radioButtonHave.isChecked = true
@@ -111,13 +113,13 @@ class EditPost : AppCompatActivity() {
         val desc = editDesc.text.toString()
         val number: Int = editQuantity.text.toString().toInt()
 
-        radioGroup = findViewById(R.id.type_radio_group)
+        radioGroup = findViewById(R.id.edit_radio_group)
 
         val selectedRadioButtonId = radioGroup.checkedRadioButtonId
         val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
         val selectedType = selectedRadioButton.text.toString()
 
-        val post = Post(null, desc, selectedType , number)
+        val post = Post(editTitle, desc, selectedType , number, likeCount)
 
         db.collection("posts").document(documentId!!)
             .set(post)
@@ -131,7 +133,7 @@ class EditPost : AppCompatActivity() {
                 val layout: View = inflater.inflate(R.layout.toast, findViewById(R.id.custom_toast_container))
 
                 val text: TextView = layout.findViewById(R.id.toast_text)
-                text.text = "Post Uploaded Successfully"
+                text.text = "Post Edited Successfully"
                 val toast = Toast(applicationContext)
                 toast.duration = Toast.LENGTH_SHORT
                 toast.view = layout

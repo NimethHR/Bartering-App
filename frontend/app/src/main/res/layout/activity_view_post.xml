@@ -146,6 +146,17 @@
                         </com.google.android.material.textview.MaterialTextView>
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/view_post_quantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/small_medium_padding"
+                            android:layout_marginTop="@dimen/small_small_padding"
+                            android:layout_marginRight="@dimen/small_medium_padding"
+                            >
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                        <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/view_post_desc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -154,7 +165,6 @@
                             android:layout_marginRight="@dimen/small_medium_padding"
                             android:layout_marginBottom="@dimen/small_medium_padding">
 
-                            <!--                            android:text="@string/lorem"-->
 
                         </com.google.android.material.textview.MaterialTextView>
 
