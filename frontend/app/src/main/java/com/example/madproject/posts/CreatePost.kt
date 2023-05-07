@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +25,10 @@ class CreatePost : AppCompatActivity() {
     private lateinit var uploadBtn: Button
     private lateinit var cancelBtn: Button
     private lateinit var browseBtn: Button
+    private lateinit var radioGroup: RadioGroup
 
+
+//    var selectedType: String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +44,6 @@ class CreatePost : AppCompatActivity() {
         uploadBtn = findViewById(R.id.upload_post_btn)
         cancelBtn = findViewById(R.id.cancel_button)
         browseBtn = findViewById(R.id.file_browse_btn)
-
 
 
         uploadBtn.setOnClickListener {
@@ -97,8 +98,11 @@ class CreatePost : AppCompatActivity() {
 
         }
     }
+
+
     private fun uploadData(){
         val db = Firebase.firestore
+
 
         var documentId: String? = null
         val title = createPostTitle.text.toString()
@@ -109,19 +113,44 @@ class CreatePost : AppCompatActivity() {
             createPostTitle.error = "Please enter a value"
         }
 
-        val post = Post(title, desc,null , number)
+
+        radioGroup = findViewById(R.id.type_radio_group)
+
+        val selectedRadioButtonId = radioGroup.checkedRadioButtonId
+        val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
+        val selectedType = selectedRadioButton.text.toString()
+
+
+        val post = Post(title, desc, selectedType , number)
 
         db.collection("posts")
             .add(post)
             .addOnSuccessListener { documentReference ->
                 Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                 documentId = documentReference.id
+
+                Log.d("Tag", "document id in CreatePost: $documentId")
+                Log.d("Tag", "selected radio button: $selectedType")
+
+
+                val inflater: LayoutInflater = layoutInflater
+                val layout: View = inflater.inflate(R.layout.toast, findViewById(R.id.custom_toast_container))
+
+                val text: TextView = layout.findViewById(R.id.toast_text)
+                text.text = "Post Uploaded Successfully"
+                val toast = Toast(applicationContext)
+                toast.duration = Toast.LENGTH_SHORT
+                toast.view = layout
+                toast.show()
+
+                val intent = Intent(this, ViewPost::class.java)
+                intent.putExtra("documentId", documentId)
+                startActivity(intent)
             }
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)
             }
-        val intent = Intent(this, ViewPost::class.java)
-        intent.putExtra("documentId", documentId)
-        startActivity(intent)
+
+
     }
 }

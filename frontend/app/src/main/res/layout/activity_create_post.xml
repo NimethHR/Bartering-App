@@ -108,41 +108,38 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_marginTop="15dp"
-                    android:layout_height="@dimen/container_height_1"
+                    android:layout_height="50dp"
                     >
 
-                    <LinearLayout
+                    <RadioGroup
+                        android:id="@+id/type_radio_group"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="@dimen/small_small_padding"
-                        android:layout_marginTop="@dimen/text_margin"
-                        tools:layout_editor_absoluteX="1dp"
-                        tools:layout_editor_absoluteY="1dp"
-                        android:layout_marginBottom="@dimen/horizontal_space">
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
                         <RadioButton
-                            android:id="@+id/haveRadioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="@dimen/text_margin"
-                            android:text="@string/post_type_have" />
+                                android:id="@+id/haveRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/text_margin"
+                                android:text="@string/post_type_have" />
 
-                        <RadioButton
-                            android:id="@+id/needRadioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/post_type_need" />
+                            <RadioButton
+                                android:id="@+id/needRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/post_type_need" />
 
-                        <RadioButton
-                            android:id="@+id/freeRadioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/post_type_donate" />
-                    </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/freeRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/post_type_donate" />
+
+                    </RadioGroup>
 
                 </com.google.android.material.card.MaterialCardView>
 

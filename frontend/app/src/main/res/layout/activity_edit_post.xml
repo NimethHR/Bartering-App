@@ -50,10 +50,12 @@
                 android:hint="@string/create_post_description">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_post_desc"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/create_text_field_width"
-                    android:text="@string/lorem"
                     />
+
+<!--                android:text="@string/lorem"-->
 
             </com.google.android.material.textfield.TextInputLayout>
 
