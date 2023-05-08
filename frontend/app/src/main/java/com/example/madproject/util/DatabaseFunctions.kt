@@ -45,6 +45,11 @@ object DatabaseFunctions {
 
     fun getCurrentUserFromFirestore(onComplete: (result: User?) -> Unit) {
         val db = Firebase.firestore
+        val currentUser = getCurrentUser()
+        if (currentUser == null){
+            onComplete(null)
+            return
+        }
         val userRef = db.collection("users").document(getCurrentUser()!!.uid)
 
         userRef.get()
