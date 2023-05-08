@@ -29,9 +29,10 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.bottom_nav_bar)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
-            when(item.itemId){
+            when (item.itemId) {
                 R.id.bottom_nav_bar_groups -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, GroupListFragment()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_profile -> {
@@ -61,4 +62,5 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword("test2@gmail.com", "password")
 
 
+    }
 }
