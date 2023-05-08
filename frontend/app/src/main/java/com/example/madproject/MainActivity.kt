@@ -1,9 +1,13 @@
 package com.example.madproject
 
 import android.content.ContentValues
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.madproject.posts.ViewPost
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textview.MaterialTextView
 
 import com.example.madproject.fragments.GroupListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -56,5 +60,5 @@ class MainActivity : AppCompatActivity() {
         auth.signOut()
         auth.signInWithEmailAndPassword("test2@gmail.com", "password")
 
-    }
+
 }
