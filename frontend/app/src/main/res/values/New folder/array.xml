@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="charityItems">
+        <item>Goods</item>
+        <item>Charity</item>
+        <item>Community</item>
+        <item>Just Notice</item>
+        <item>Other</item>
+    </string-array>
+</resources>
