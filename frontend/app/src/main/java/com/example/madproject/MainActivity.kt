@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         val auth = Firebase.auth
 
         auth.signOut()
-        auth.signInWithEmailAndPassword("test2@gmail.com", "password")
-
+        auth.signInWithEmailAndPassword("test@gmail.com", "password")
+    }
 
 }
