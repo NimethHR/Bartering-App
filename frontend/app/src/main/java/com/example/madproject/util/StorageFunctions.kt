@@ -16,4 +16,9 @@ object StorageFunctions {
         val url = "https://firebasestorage.googleapis.com/v0/b/mad-bartering-app.appspot.com/o/groups%2F$groupId?alt=media"
         return Uri.parse(url)
     }
+
+    fun getUserImageUrl(userId: String): Uri {
+        val url = "https://firebasestorage.googleapis.com/v0/b/mad-bartering-app.appspot.com/o/users%2F$userId?alt=media"
+        return Uri.parse(url)
+    }
 }

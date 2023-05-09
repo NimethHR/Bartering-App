@@ -16,7 +16,9 @@
             android:layout_width="@dimen/profile_image_small"
             android:layout_height="@dimen/profile_image_small"
             android:layout_gravity="bottom"
-            android:src="@mipmap/default_profile_image" />
+            android:src="@mipmap/default_profile_image"
+            android:id="@+id/iv_message_view_image"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             app:boxBackgroundColor="?attr/colorPrimaryContainer"
