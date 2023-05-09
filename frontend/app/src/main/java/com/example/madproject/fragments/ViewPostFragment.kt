@@ -32,11 +32,13 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import java.util.zip.Inflater
 import android.view.MenuInflater
+import androidx.core.app.ShareCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.google.firebase.auth.ktx.auth
 import javax.annotation.Nullable
 
 // TODO: Rename parameter arguments, choose names that match
@@ -54,17 +56,20 @@ class ViewPostFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private  var documentId: String? = null
-    private  var imageDownloadUrl: String? = null
+    private var documentId: String? = null
+    private var imageDownloadUrl: String? = null
     private var isImageLoaded = false
 
     private lateinit var likeBtn: Button
+    private lateinit var contactBtn: Button
+    private lateinit var shareBtn: Button
     private lateinit var titleTextView: MaterialTextView
     private lateinit var descTextView: MaterialTextView
     private lateinit var viewPosType: MaterialTextView
     private lateinit var viewPostQuantity: MaterialTextView
     private lateinit var postImage: ImageView
 
+    var title: String =""
 
     var likeCount: Int = 0
     var isLiked = false
@@ -110,6 +115,9 @@ class ViewPostFragment : Fragment() {
         viewPosType = rootView.findViewById(R.id.view_post_type)
         viewPostQuantity = rootView.findViewById(R.id.view_post_quantity)
         postImage = rootView.findViewById(R.id.imageView3)
+        contactBtn = rootView.findViewById(R.id.contact_btn)
+        shareBtn = rootView.findViewById(R.id.share_btn)
+
 
         likeBtn.setOnClickListener {
             if (isLiked){
@@ -129,6 +137,50 @@ class ViewPostFragment : Fragment() {
             }
             likeUpdate()
         }
+
+        contactBtn.setOnClickListener {
+            var auth = Firebase.auth
+            var user = auth.currentUser
+
+            if (user!= null){
+
+                //TODO replace with user fragment
+//                val viewPostFragment = ViewPostFragment()
+//                val args = Bundle().apply {
+//                    putString("user", user?.uid)
+//                }
+//
+//                requireActivity().supportFragmentManager.beginTransaction()
+//                    .replace(R.id.fragment_container, viewPostFragment)
+//                    .commit()
+
+            }else{
+                val inflater: LayoutInflater = layoutInflater
+                val layout: View = inflater.inflate(R.layout.toast, container, false)
+
+                val text: TextView = layout.findViewById(R.id.toast_text)
+                text.text = "Sign In required"
+                val toast = Toast(requireContext())
+                toast.duration = Toast.LENGTH_LONG
+                toast.view = layout
+                toast.show()
+            }
+        }
+
+        shareBtn.setOnClickListener {
+            val textToShare = "Check out this awesome post: $title"
+
+            val shareIntent = ShareCompat.IntentBuilder.from(requireActivity())
+                .setType("text/plain")
+                .setText(textToShare)
+                .intent
+
+            // Verify that the intent can be resolved and start the share activity
+            if (shareIntent.resolveActivity(requireActivity().packageManager) != null) {
+                startActivity(shareIntent)
+            }
+        }
+
         fetchData()
         return rootView
     }
@@ -277,11 +329,12 @@ class ViewPostFragment : Fragment() {
         docRef.get()
             .addOnSuccessListener { result ->
                 if (result.exists()){
-                    val title = result.getString("title")
+                    title = result.getString("title").toString()
                     val desc = result.getString("description")
                     val type = result.getString("type")
                     val longLikeCount = result.getLong("likes")
                     val longQuantity = result.getLong("quantity")
+                    val imageDownloadUrl2 = result.getString("imageDownloadUrl")
 
                     quantity =longQuantity?.toInt()?: 0
 

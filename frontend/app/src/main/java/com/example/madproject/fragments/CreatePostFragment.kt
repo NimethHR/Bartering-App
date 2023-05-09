@@ -18,6 +18,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.models.Post
 import com.example.madproject.posts.ViewPost
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
@@ -54,6 +55,8 @@ class CreatePostFragment : Fragment() {
     private var imageDownloadUrl:String = ""
     private var selectedType: String = ""
     private lateinit var rootView: View
+    var auth = Firebase.auth
+    var user = auth.currentUser
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,11 +83,9 @@ class CreatePostFragment : Fragment() {
         browseBtn = rootView.findViewById(R.id.file_browse_btn)
         radioGroup = rootView.findViewById(R.id.type_radio_group)
 
-
-
-        if (radioGroup.checkedRadioButtonId <= 0) {
-            Toast.makeText(requireContext(), "Choose Radio Button Please", Toast.LENGTH_SHORT).show();
-        }
+//        if (radioGroup.checkedRadioButtonId <= 0) {
+//            Toast.makeText(requireContext(), "Choose Radio Button Please", Toast.LENGTH_SHORT).show();
+//        }
 
         uploadBtn.setOnClickListener {
             uploadBtn.text = "Uploading..."
@@ -171,7 +172,6 @@ class CreatePostFragment : Fragment() {
     private fun uploadData(){
         val db = Firebase.firestore
 
-
         val title = createPostTitle.text.toString()
         val desc = createPostDesc.text.toString()
         val number: Int = createPostQuantity.text.toString().toInt()
@@ -193,13 +193,13 @@ class CreatePostFragment : Fragment() {
                 Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                 documentId = documentReference.id
 
-                db.collection("posts").document(documentId!!)
-                    .update("documentId", documentId)
-
                 if (selectedImageUri != null){
                     uploadImage(selectedImageUri!!){success ->
                         if (success){
                             //image uploaded successfully
+                            db.collection("posts").document(documentId!!)
+                                .update("documentId", documentId,"user", user?.uid, "imageDownloadUrl", imageDownloadUrl)
+
                             val viewPostFragment = ViewPostFragment()
                             val args = Bundle().apply {
                                 putString("documentId", documentId)

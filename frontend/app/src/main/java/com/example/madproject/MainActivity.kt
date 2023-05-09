@@ -31,19 +31,19 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when(item.itemId){
-                R.id.groups -> {
+                R.id.bottom_nav_bar_groups -> {
 //                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
                     true
                 }
-                R.id.profile -> {
+                R.id.bottom_nav_bar_profile -> {
                     true
                 }
 
-                R.id.postNew -> {
+                R.id.bottom_nav_bar_post -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
                     true
                 }
-                R.id.home -> {
+                R.id.bottom_nav_bar_home -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomePage()).commit()
                     true
                 }
@@ -53,13 +53,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//
-//        val auth = Firebase.auth
-//
-//        auth.signOut()
-//        auth.signInWithEmailAndPassword("test@gmail.com", "password")
-//    }
+    override fun onStart() {
+        super.onStart()
+
+        val auth = Firebase.auth
+
+        auth.signOut()
+        auth.signInWithEmailAndPassword("test@gmail.com", "password")
+    }
 
 }

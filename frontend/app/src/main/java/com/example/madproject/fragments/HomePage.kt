@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
@@ -53,9 +54,10 @@ class HomePage : Fragment() {
         rootView = inflater.inflate(R.layout.fragment_home_page, container, false)
 
         val recyclerView: RecyclerView = rootView.findViewById(R.id.home_page_recycler)
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
+        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(requireContext(), 2)
         val adapter: PostAdapter = PostAdapter(postsList)
 
+//        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 //        val postAdapter = PostAdapter(postsList)
 
         adapter.setOnItemClickListener { documentId ->
@@ -64,6 +66,8 @@ class HomePage : Fragment() {
             val args = Bundle().apply {
                 putString("documentId", documentId)
             }
+
+            viewPostFragment.arguments = args
 
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, viewPostFragment)

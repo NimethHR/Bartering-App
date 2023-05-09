@@ -19,7 +19,6 @@
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:titleTextColor="@color/black"
                 android:background="?attr/colorPrimaryInverse"
-                app:menu="@menu/create_post_toolbar"
                 app:title="@string/post_create_toolbar">
 
             </androidx.appcompat.widget.Toolbar>
