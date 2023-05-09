@@ -1,5 +1,7 @@
 package com.example.madproject
 
+import android.content.ContentValues
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,21 +9,57 @@ import com.example.madproject.posts.ViewPost
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
 
-class MainActivity : AppCompatActivity() {
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.ktx.auth
 
-    private lateinit var card1: MaterialTextView
+import android.util.Log
+import android.widget.Button
+import com.example.madproject.fragments.CreatePostFragment
+import com.example.madproject.fragments.HomePage
+
+import com.google.firebase.ktx.Firebase
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        card1 = findViewById(R.id.view_post_title1)
+        bottomNavigationView = findViewById(R.id.bottom_nav_bar)
 
-        card1.setOnClickListener{
-            val intent = Intent(this, ViewPost::class.java)
-            startActivity(intent)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.groups -> {
+//                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
+                    true
+                }
+                R.id.profile -> {
+                    true
+                }
+
+                R.id.postNew -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
+                    true
+                }
+                R.id.home -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomePage()).commit()
+                    true
+                }
+                else -> false
+            }
         }
+
     }
+
+//    override fun onStart() {
+//        super.onStart()
+//
+//        val auth = Firebase.auth
+//
+//        auth.signOut()
+//        auth.signInWithEmailAndPassword("test@gmail.com", "password")
+//    }
 
 }

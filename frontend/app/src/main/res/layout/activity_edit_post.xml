@@ -83,7 +83,7 @@
 
                         <Button
 
-                        android:id="@+id/file_browse_btn"
+                        android:id="@+id/file_edit_btn"
                         android:layout_width="@dimen/button_type_1_width"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

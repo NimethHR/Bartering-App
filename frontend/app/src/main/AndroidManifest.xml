@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MADProject"
         tools:targetApi="31">
         <activity
+            android:name=".posts.HomePage"
+            android:exported="false" />
+        <activity
             android:name=".posts.ViewPost"
             android:exported="true" />
         <activity
