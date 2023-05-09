@@ -49,6 +49,32 @@
     <string name="sample_post_5">Studio Mic</string>
     <string name="sample_post_6">Ful table set</string>
     <string name="quantityNumField">Enter number of items</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Default values    -->
+    <string name="default_group_name">[group name]</string>
+    <string name="default_group_description">[group description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis consectetur sapien, vitae aliquam lectus fermentum vitae.</string>
+
+    <!-- Groups view    -->
+    <string name="groups_tablayout_groups">Groups</string>
+    <string name="groups_tablayout_Invites">Invites</string>
+    <string name="groups_btn_accept">Accept</string>
+    <string name="groups_btn_reject">Reject</string>
+
+    <!-- Group edit view    -->
+    <string name="group_edit_btn_change_picture">Change picture</string>
+    <string name="group_edit_txt_group_name">Group Name</string>
+    <string name="group_edit_txt_group_description">Group Description</string>
+    <string name="group_edit_btn_cancel">Cancel</string>
+    <string name="group_edit_btn_save">Save Changes</string>
+
+    <!-- Group info view    -->
+    <string name="group_info_btn_invite">Invite</string>
+    <string name="group_info_txt_search_username">Search username</string>
+
+    <!-- group chat view    -->
+    <string name="chat_txt_type_message">Type message</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
