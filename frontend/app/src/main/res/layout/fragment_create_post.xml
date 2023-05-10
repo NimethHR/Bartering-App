@@ -120,7 +120,8 @@
                         android:id="@+id/type_radio_group"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:checkedButton="@id/haveRadioButton">
 
                         <RadioButton
                             android:id="@+id/haveRadioButton"

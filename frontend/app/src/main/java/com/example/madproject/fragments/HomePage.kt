@@ -57,9 +57,6 @@ class HomePage : Fragment() {
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(requireContext(), 2)
         val adapter: PostAdapter = PostAdapter(postsList)
 
-//        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-//        val postAdapter = PostAdapter(postsList)
-
         adapter.setOnItemClickListener { documentId ->
 
             val viewPostFragment = ViewPostFragment()

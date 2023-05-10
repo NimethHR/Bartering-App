@@ -18,6 +18,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.madproject.models.Post
 import com.example.madproject.posts.ViewPost
+import com.example.madproject.util.Validation
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -58,6 +59,8 @@ class CreatePostFragment : Fragment() {
     var auth = Firebase.auth
     var user = auth.currentUser
 
+//    lateinit var post:Post
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,8 +91,29 @@ class CreatePostFragment : Fragment() {
 //        }
 
         uploadBtn.setOnClickListener {
-            uploadBtn.text = "Uploading..."
-            uploadData()
+
+//            var result = Validation.validatePost(post)
+//            if (result["title"] == false){
+//                createPostTitle.error = "Please enter title between 0 and 150 characters"
+//            }
+//            if (result["description"] == false){
+//                createPostDesc.error = "Please enter description between 0 and 150 characters"
+//            }
+
+            if (createPostTitle.text!!.isEmpty()){
+                createPostTitle.error = "Please enter a value"
+            }
+            else if (createPostDesc.text!!.isEmpty()){
+                createPostDesc.error = "Please enter a value"
+            }
+            else if (createPostQuantity.text!!.isEmpty()){
+                createPostQuantity.error = "Please enter a value"
+            }
+            else{
+                uploadBtn.text = "Uploading..."
+                uploadData()
+            }
+
         }
 
         cancelBtn.setOnClickListener {
@@ -102,6 +126,12 @@ class CreatePostFragment : Fragment() {
             alertDialogBuilder.setPositiveButton("Discard") { dialog, which ->
                 // Perform the delete operation here
                 // Example: deleteItem()
+                val homePageFragment = HomePage()
+
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, homePageFragment)
+                    .commit()
+
             }
             alertDialogBuilder.setNegativeButton("Cancel") { dialog, which ->
                 dialog.dismiss()
@@ -175,10 +205,6 @@ class CreatePostFragment : Fragment() {
         val title = createPostTitle.text.toString()
         val desc = createPostDesc.text.toString()
         val number: Int = createPostQuantity.text.toString().toInt()
-
-        if (title.isEmpty() || desc.isEmpty()){
-            createPostTitle.error = "Please enter a value"
-        }
 
         val selectedRadioButtonId = radioGroup.checkedRadioButtonId
         val selectedRadioButton = rootView.findViewById<RadioButton>(selectedRadioButtonId)
