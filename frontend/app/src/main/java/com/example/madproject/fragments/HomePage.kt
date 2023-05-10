@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -59,16 +61,39 @@ class HomePage : Fragment() {
 
         adapter.setOnItemClickListener { documentId ->
 
-            val viewPostFragment = ViewPostFragment()
-            val args = Bundle().apply {
-                putString("documentId", documentId)
-            }
+            var imageURL:String? = "ghjhk"
 
-            viewPostFragment.arguments = args
+            var docRef = db.collection("posts").document(documentId)
+            docRef.get()
+                .addOnSuccessListener { result ->
+                    if (result.exists()){
+                        imageURL = result.getString("imageDownloadUrl")
 
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, viewPostFragment)
-                .commit()
+                        val viewPostFragment = ViewPostFragment()
+                        val args = Bundle().apply {
+                            putString("documentId", documentId)
+                            putString("imageURL", imageURL)
+                            Log.w(TAG, "imageURl value in HomePage:  $imageURL")
+
+                        }
+
+                        viewPostFragment.arguments = args
+                        requireActivity().supportFragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, viewPostFragment)
+                            .commit()
+
+                    }else{
+                        val inflater: LayoutInflater = layoutInflater
+                        val layout: View = inflater.inflate(R.layout.toast, rootView.findViewById(R.id.custom_toast_container))
+
+                        val text: TextView = layout.findViewById(R.id.toast_text)
+                        text.text = "Could not load image"
+                        val toast = Toast(requireContext())
+                        toast.duration = Toast.LENGTH_SHORT
+                        toast.view = layout
+                        toast.show()
+                    }
+                }
         }
 
         recyclerView.layoutManager = layoutManager
@@ -76,7 +101,6 @@ class HomePage : Fragment() {
 
         val postCollectionRef = db.collection("posts")
         Log.e(TAG, "postCollectionRef has: $postCollectionRef")
-
 
         postCollectionRef.get()
             .addOnSuccessListener { result ->

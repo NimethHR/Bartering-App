@@ -282,11 +282,24 @@ class ViewPostFragment : Fragment() {
     }
 
     private fun loadImage() {
-        postImage.setImageResource(R.drawable.sample1_sofa)
+        var imageURL:String? = ""
+        Log.w(TAG, "################ Image $imageDownloadUrl #################")
+
+//        println(imageDownloadUrl)
+
+        if (imageDownloadUrl==null){
+            arguments?.let {
+                imageURL = it.getString("imageURL")
+                Log.w(TAG, "imageURl value:  $imageURL")
+
+            }
+            imageDownloadUrl = imageURL
+        }
 
         Glide.with(requireContext())
             .load(imageDownloadUrl)
             .placeholder(R.drawable.loading_bar)
+            .centerCrop()
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
                     @Nullable e: GlideException?,
@@ -321,10 +334,8 @@ class ViewPostFragment : Fragment() {
 
         val docRef = db.collection("posts").document(documentId!!)
 
-        if (!imageDownloadUrl.isNullOrEmpty()) {
-            loadImage()
-            Log.w(TAG, "imageDownloadUrl has a value, Loading Image.......")
-        }
+        loadImage()
+        Log.w(TAG, "imageDownloadUrl has a value, Loading Image.......")
 
         docRef.get()
             .addOnSuccessListener { result ->

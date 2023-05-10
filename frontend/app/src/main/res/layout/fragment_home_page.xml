@@ -6,13 +6,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomePage">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/create_appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/create_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryInverse"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:menu="@menu/create_post_toolbar"
+            app:title="@string/post_home"
+            app:titleTextColor="@color/black">
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_page_recycler"
         android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         />
-
+    </LinearLayout>
 </FrameLayout>
