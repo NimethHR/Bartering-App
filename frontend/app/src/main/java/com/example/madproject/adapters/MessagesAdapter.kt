@@ -15,12 +15,15 @@ import com.example.madproject.fragments.GroupViewFragment
 import com.example.madproject.fragments.NewGroupFragment
 import com.example.madproject.models.Message
 import com.example.madproject.util.StorageFunctions
+import com.google.android.material.textfield.TextInputLayout
+import java.text.SimpleDateFormat
 
 class MessagesAdapter(var messageList: List<Message>?): RecyclerView.Adapter<MessagesAdapter.MyViewHolder>() {
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val message: TextView =  view.findViewById(R.id.et_message_view_message)
         val image: ImageView = view.findViewById<ImageView>(R.id.iv_message_view_image)
+        val til: TextInputLayout = view.findViewById(R.id.til_message_view_message)
 
     }
 
@@ -31,6 +34,7 @@ class MessagesAdapter(var messageList: List<Message>?): RecyclerView.Adapter<Mes
 
     override fun onBindViewHolder(holder: MessagesAdapter.MyViewHolder, position: Int) {
         holder.message.text = messageList?.get(position)?.content
+        holder.til.helperText = messageList?.get(position)?.senderName + " at " + SimpleDateFormat("dd/MM/yyyy HH:mm").format(messageList?.get(position)?.timestamp?.toDate()?.time)
 
         Glide.with(holder.itemView.context)
             .load(StorageFunctions.getUserImageUrl(messageList?.get(position)?.senderId!!))

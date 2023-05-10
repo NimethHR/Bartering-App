@@ -185,7 +185,5 @@ class CreatePost : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)
             }
-
-
     }
 }

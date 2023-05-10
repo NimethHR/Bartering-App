@@ -7,7 +7,8 @@
     <string name="create_tab1">Image</string>
     <string name="create_tab2">Post</string>
     <string name="create_tab3">Location</string>
-    <string name="post_home">All Posts</string>
+    <string name="post_home">Posts</string>
+
 
 
     <!--  Post actions  -->
@@ -50,7 +51,7 @@
     <string name="sample_post_6">Ful table set</string>
     <string name="quantityNumField">Enter number of items</string>
 <!-- TODO: Remove or change this placeholder text -->
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Default values    -->
     <string name="default_group_name">[group name]</string>
@@ -75,7 +76,5 @@
 
     <!-- group chat view    -->
     <string name="chat_txt_type_message">Type message</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

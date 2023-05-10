@@ -9,12 +9,14 @@ import com.example.madproject.posts.ViewPost
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
 
-import com.example.madproject.fragments.GroupListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 
 import android.util.Log
 import android.widget.Button
+import com.example.madproject.fragments.CreatePostFragment
+import com.example.madproject.fragments.GroupListFragment
+import com.example.madproject.fragments.HomePage
 
 import com.google.firebase.ktx.Firebase
 
@@ -37,13 +39,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.bottom_nav_bar_profile -> {
                     true
                 }
-                R.id.bottom_nav_bar_dashboard -> {
-                    true
-                }
+
                 R.id.bottom_nav_bar_post -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_home -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomePage()).commit()
                     true
                 }
                 else -> false

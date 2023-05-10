@@ -2,17 +2,22 @@ package com.example.madproject.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.provider.ContactsContract.Data
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
 import com.example.madproject.databinding.FragmentGroupInfoBinding
 import com.example.madproject.util.DatabaseFunctions
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.madproject.adapters.ChatActivityAdapter
+import com.example.madproject.adapters.GroupInvitesAdapter
 import com.example.madproject.util.StorageFunctions
 
 // TODO: Rename parameter arguments, choose names that match
@@ -103,6 +108,17 @@ class GroupInfoFragment : Fragment() {
                     binding.etGroupViewInvite.text?.clear()
                 }
             }
+        }
+
+        DatabaseFunctions.getChatActivity(id!!) { chatActivity ->
+            if (chatActivity == null) {
+                return@getChatActivity
+            }
+
+            val adapter = ChatActivityAdapter(chatActivity)
+            val recyclerView: RecyclerView = binding.rvGroupMessageActivity
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(context)
         }
 
         return binding.root
