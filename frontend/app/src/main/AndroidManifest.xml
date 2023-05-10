@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MADProject"
         tools:targetApi="31">
         <activity
+            android:name=".posts.HomePage"
+            android:exported="false" />
+        <activity
             android:name=".posts.ViewPost"
             android:exported="true" />
         <activity
@@ -21,7 +24,7 @@
             android:name=".posts.CreatePost"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +32,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddprofActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DeleteUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateprofActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
