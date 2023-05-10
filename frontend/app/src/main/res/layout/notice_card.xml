@@ -21,32 +21,44 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <TextView
+                <EditText
                     android:id="@+id/feedback"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="secondary_text"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?android:attr/textColorSecondary"
-                    android:textSize="16sp" />
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
 
-                <TextView
+                <EditText
                     android:id="@+id/descriptionTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="supporting_text"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/delete"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/delete" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/delete"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/delete" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/updateNotice"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/updateNotice" />
+                </LinearLayout>
+
             </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

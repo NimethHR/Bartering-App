@@ -19,7 +19,7 @@ class FeedbackAdp(
     val db = Firebase.firestore
 
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        val feedback : TextView = itemView.findViewById(R.id.feedback)
+        val feedback : TextView = itemView.findViewById(R.id.feedback1)
         val delete:Button = itemView.findViewById(R.id.deletefeed)
     }
 

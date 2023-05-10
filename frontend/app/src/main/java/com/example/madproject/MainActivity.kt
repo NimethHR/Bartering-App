@@ -9,15 +9,12 @@ import com.example.madproject.posts.ViewPost
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
 
-import com.example.madproject.fragments.GroupListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 
 import android.util.Log
 import android.widget.Button
-import com.example.madproject.fragments.AddNotice
-import com.example.madproject.fragments.AdminDashboard
-import com.example.madproject.fragments.AllNotices
+import com.example.madproject.fragments.*
 
 import com.google.firebase.ktx.Firebase
 

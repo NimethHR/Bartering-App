@@ -46,7 +46,6 @@ class AdminDashboard : Fragment() {
         addNewNotice = view.findViewById(R.id.addNewNotice)
         viewAllNotices = view.findViewById(R.id.addFeedBtn)
         viewAllFeedbacks = view.findViewById(R.id.viewAllFeedbacks)
-        addMemo = view.findViewById(R.id.addMemo)
 
         addNewNotice.setOnClickListener {
             parentFragmentManager.beginTransaction()
@@ -66,12 +65,7 @@ class AdminDashboard : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-        addMemo.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,AddMemo())
-                .addToBackStack(null)
-                .commit()
-        }
+
 //            parentFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupInfoFragment.newInstance(id, group?.name, group?.description)).addToBackStack(null).commit()
 //            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,AllNotices()).addToBackStack(null).commit()
         return view

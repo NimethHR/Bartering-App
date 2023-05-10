@@ -60,27 +60,11 @@
         android:text="@string/view_all_feeds"
         android:textSize="@dimen/admin_page_text"
         app:icon="@drawable/view_all_feedbacks"
-        app:layout_constraintBottom_toTopOf="@+id/addMemo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addFeedBtn"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/addMemo"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_higth"
-        android:padding="@dimen/padding_addNotice"
-        android:text="@string/AddMemo"
-        android:textSize="@dimen/admin_page_text"
-        app:icon="@drawable/baseline_collections_bookmark_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewAllFeedbacks"
+        app:layout_constraintTop_toBottomOf="@+id/addFeedBtn"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,4 +13,5 @@
     <string name="submitFeed">Submit  Feed</string>
     <string name="AddMemo">Add a Memo</string>
     <string name="AddMemoTitle">"Add Memo title "</string>
+    <string name="updateNotice">Update</string>
 </resources>
