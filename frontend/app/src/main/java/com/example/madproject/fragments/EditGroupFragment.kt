@@ -67,6 +67,11 @@ class EditGroupFragment : Fragment() {
         binding.btnEditGroupSave.setOnClickListener() {
             val newDescription = binding.etEditGroupDescription.text.toString()
 
+            if (!newDescription.isNullOrEmpty() && newDescription.length > 150) {
+                binding.etEditGroupDescription.error = "Description must be less than 150 characters"
+                return@setOnClickListener
+            }
+
             DatabaseFunctions.updateGroup(id ?: return@setOnClickListener, newDescription)
             StorageFunctions.uploadImage(fileUri ?: return@setOnClickListener, "groups", id ?: return@setOnClickListener)
             activity?.onBackPressed()

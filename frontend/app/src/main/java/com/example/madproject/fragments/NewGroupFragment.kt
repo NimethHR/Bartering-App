@@ -10,6 +10,7 @@ import com.example.madproject.R
 import com.example.madproject.models.NewGroup
 import com.example.madproject.databinding.FragmentNewGroupBinding
 import com.example.madproject.util.DatabaseFunctions
+import com.example.madproject.util.Validation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +59,14 @@ class NewGroupFragment() : Fragment() {
                 admins = listOf(currentUser.uid)
             )
 
-            // TODO: Validate group name and description
+            val validationResult = Validation.validateGroup(newGroup)
+
+            binding.etNewGroupName.error = validationResult["name"]?.message
+            binding.etNewGroupDescription.error = validationResult["description"]?.message
+
+            val errorCount = validationResult.count { !it.value.isValid }
+
+            if (errorCount > 0) return@setOnClickListener
 
             // Add the group to the database
             DatabaseFunctions.createGroup(newGroup){
