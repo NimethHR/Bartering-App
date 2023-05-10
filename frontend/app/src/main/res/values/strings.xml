@@ -76,5 +76,6 @@
 
     <!-- group chat view    -->
     <string name="chat_txt_type_message">Type message</string>
+    <string name="search_btn">Search</string>
 
 </resources>
