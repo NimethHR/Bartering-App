@@ -49,7 +49,7 @@
     <string name="sample_post_5">Studio Mic</string>
     <string name="sample_post_6">Ful table set</string>
     <string name="quantityNumField">Enter number of items</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
 
 
     <!-- Default values    -->
@@ -77,5 +77,19 @@
     <string name="chat_txt_type_message">Type message</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_notice">Add a Notice</string>
+    <string name="view_all_notices">View All Notices</string>
+    <string name="view_all_feeds">View Feedbacks</string>
+    <string name="add_button">Add Notice</string>
+    <string name="AddTitleOfNotice">Add Title of notice</string>
+    <string name="AddDescriptionofnotice">Add Description of notice</string>
+    <string name="badkToDash">Dashboard</string>
+    <string name="delete">Delete Notice</string>
+    <string name="feedC">Feed Count</string>
+    <string name="enterFeed">Enter your feedback</string>
+    <string name="nameForFeed">Your Feedbadk is gold For us</string>
+    <string name="submitFeed">Submit  Feed</string>
+    <string name="AddMemo">Add a Memo</string>
+    <string name="AddMemoTitle">"Add Memo title "</string>
 
 </resources>

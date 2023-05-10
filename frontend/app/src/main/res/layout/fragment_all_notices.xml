@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".fragments.AllNotices">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/NoticeList"
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/addNewNotice"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="194dp"
+        android:layout_height="@dimen/button_higth"
+        android:padding="@dimen/padding_addNotice"
+        android:text="@string/add_notice"
+        android:textSize="@dimen/admin_page_text"
+        app:icon="@drawable/add_new_notice"
+        app:layout_constraintBottom_toTopOf="@+id/addFeedBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adv"
+        app:layout_constraintVertical_bias="0.5" />
+
+</LinearLayout>

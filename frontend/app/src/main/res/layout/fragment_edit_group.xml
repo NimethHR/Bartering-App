@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/group_edit_btn_save"
                     android:id="@+id/btn_edit_group_save"
-                    />
+                    style="?android:attr/buttonBarButtonStyle" />
 
             </LinearLayout>
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center_horizontal"
+android:orientation="vertical"
+tools:context=".fragments.AddMemo"
+    >
+
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:hint="@string/AddMemoTitle"
+    android:padding="@dimen/groups_card_text_margin">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/memo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/AddMemoTitle" />
+
+</com.google.android.material.textfield.TextInputLayout>
+
+<Button
+    android:id="@+id/add"
+    style="@style/Widget.Material3.Button.TonalButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_vertical"
+    android:padding="@dimen/padding_addNotice"
+    android:text="Filled tonal button"
+    app:icon="@drawable/ic_add_24dp"
+    tools:layout_editor_absoluteX="111dp"
+    tools:layout_editor_absoluteY="502dp" />
+
+</LinearLayout>

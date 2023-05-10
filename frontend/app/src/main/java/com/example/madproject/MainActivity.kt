@@ -15,6 +15,9 @@ import com.google.firebase.auth.ktx.auth
 
 import android.util.Log
 import android.widget.Button
+import com.example.madproject.fragments.AddNotice
+import com.example.madproject.fragments.AdminDashboard
+import com.example.madproject.fragments.AllNotices
 
 import com.google.firebase.ktx.Firebase
 
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.bottom_nav_bar_groups -> {
+                R.id.bottom_nav_bar_groups ->{
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, GroupListFragment()).commit()
                     true
@@ -39,6 +42,9 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_nav_bar_dashboard -> {
+//                    Navbar button to admin_dash board
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, AdminDashboard()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_post -> {
@@ -63,4 +69,3 @@ class MainActivity : AppCompatActivity() {
     }
 
     }
-}

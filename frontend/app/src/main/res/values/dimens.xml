@@ -25,5 +25,11 @@
     <!-- text sizes   -->
     <dimen name="text_size_h2">24dp</dimen>
     <dimen name="text_size_h3">15dp</dimen>
+    <dimen name="padding_addNotice">20dp</dimen>
+    <dimen name="admin_page_text" >20dp</dimen>
+    <dimen name="button_width">230dp</dimen>
+    <dimen name="button_higth">80dp</dimen>
+    <dimen name="commonPadding">20dp</dimen>
+    <dimen name="textSize">20dp</dimen>
 
 </resources>
