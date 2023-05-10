@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login_btn"
+    android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -13,7 +13,8 @@
 
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="10dp"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/pEditTitle"
@@ -30,13 +31,14 @@
         app:boxBackgroundMode="none">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginemail"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/text_input_height"
 
+            android:layout_height="@dimen/text_input_height"
             android:background="#E7A0F3"
             android:backgroundTint="#EED7FD"
             android:drawableLeft="@drawable/baseline_person_outline_24"
-            android:hint="@string/login_register_username"
+            android:hint="  Email"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,8 +48,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-
-        android:id="@+id/reg_pwd1"
+        android:id="@+id/loginpwd"
         android:layout_width="379dp"
         android:layout_height="@dimen/text_input_height"
         android:background="#CBF9FF"
@@ -56,28 +57,57 @@
         android:ems="10"
         android:hint="@string/login_register_password"
         android:inputType="textPassword"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+
+        />
 
     <TextView
         android:id="@+id/frgt_pwd"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:text="Forgot Password ?"
+        android:layout_height="60dp"
+        android:text=""
         android:textAlignment="viewEnd"
 
         />
 
     <Button
-        android:id="@+id/regBtn"
-        android:layout_width="276dp"
+        android:id="@+id/loginbtn"
+        android:layout_width="285dp"
         android:layout_height="91dp"
         android:insetLeft="@dimen/Login_button_left"
         android:insetTop="@dimen/form_button_top"
         android:insetBottom="6dp"
         android:text="@string/login_button"
         android:visibility="visible"
-        app:cornerRadius="20dp"
+        app:cornerRadius="15dp" />
 
-        />
+    <Button
+        android:id="@+id/Google_log_btn"
+        android:layout_width="313dp"
+        android:layout_height="76dp"
+        android:insetLeft="90dp"
+        android:insetTop="10dp"
+        android:insetBottom="16dp"
+        android:text="Sign In With Google"
+        android:visibility="visible"
+        app:cornerRadius="10dp" />
 
+   >
+
+
+
+    >
+
+    <TextView
+        android:layout_marginLeft="110dp"
+        android:id="@+id/regnav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Registered Yet ? , Sign Up !"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </LinearLayout>

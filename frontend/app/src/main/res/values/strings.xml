@@ -1,81 +1,47 @@
 <resources>
+    <string name="app_name">Barter App</string>
 
-    <!-- general-->
-    <string name="app_name">MADProject</string>
-    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis consectetur sapien, vitae aliquam lectus fermentum vitae. Vestibulum nec sapien facilisis, malesuada elit sed, accumsan tellus. Quisque vitae laoreet lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at elit non ante vulputate dictum vulputate sit amet tortor. Quisque est enim, condimentum eget magna id.</string>
-    <string name="create_nestedScroll_description">Create your post here</string>
-    <string name="create_tab1">Image</string>
-    <string name="create_tab2">Post</string>
-    <string name="create_tab3">Location</string>
-    <string name="post_home">All Posts</string>
+    <string name="login_title">Sign - In</string>
+    <string name="login_register_password">   Password</string>
+    <string name="login_register_username">User Name</string>
+    <string name="login_button">Log In</string>
 
-
-    <!--  Post actions  -->
-    <string name="post_title">Post title here</string>
-    <string name="edit_post">Edit Post</string>
-    <string name="create_post_title">Post Title</string>
-    <string name="post_create_toolbar">Create Post</string>
-    <string name="create_post_file_picker_button">Browse</string>
-    <string name="create_post_description">Post Description</string>
-    <string name="create_location_picker">Select Location</string>
-    <string name="create_post_location_picker_button">Browse</string>
-    <string name="create_post_quantity_select_btn">Quantity</string>
-    <string name="create_post_quantity_select">Enter Quantity: </string>
-
-    <!--  Post Types  -->
-    <string name="post_type_need">Need</string>
-    <string name="post_type_have">Have</string>
-    <string name="post_type_donate">Free</string>
-
-    <!--buttons-->
-    <string name="create_post_submit_btn">Upload Post</string>
-    <string name="edit_post_submit_btn">Edit Post</string>
-    <string name="view_post_like_btn">Like</string>
-    <string name="createBtn">Post Name</string>
-    <string name="view_post_contact_btn">Contact</string>
-    <string name="view_post_share_btn">Share</string>
-    <string name="cancel_btn">Cancel</string>
-
-    <!--  messages  -->
-    <string name="edit_post_image">Cannot edit uploaded images</string>
-    <string name="create_file_picker">Pick images to Upload</string>
-    <string name="edit_file_picker">Edit images</string>
-
-    <!--  Post Sample Data  -->
-    <string name="sample_post_1">One piece 6ft Red Fabric Sofa</string>
-    <string name="sample_post_2">Casual deck shoes</string>
-    <string name="sample_post_3">Painting Equipment</string>
-    <string name="sample_post_4">Nissan Skyline r34</string>
-    <string name="sample_post_5">Studio Mic</string>
-    <string name="sample_post_6">Ful table set</string>
-    <string name="quantityNumField">Enter number of items</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <string name="register_title">Register</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_txtview_email">Enter a Valid Email</string>
+    <string name="reg_txtview_username">Enter a User Name</string>
+    <string name="reg_txtview_pswd">Enter a Password </string>
+    <string name="reg_txtview_repswd">Re enter the Password</string>
+    <string name="register_re_enter_password">Re-Enter Password</string>
+    <string name="reg_btn">Submit</string>
 
 
-    <!-- Default values    -->
-    <string name="default_group_name">[group name]</string>
-    <string name="default_group_description">[group description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis consectetur sapien, vitae aliquam lectus fermentum vitae.</string>
+    <string name="profile_username">𝗥𝗶𝗰𝗵𝗮𝗿𝗱 𝟳𝟳</string>
+    <string name="profile_email">Richard777@gmail.com</string>
+    <string name="profile_mobile">Mobile :</string>
+    <string name="Profile_mobile_num">077-346-0987</string>
+    <string name="profile_tell">Tell :</string>
+    <string name="profile_tell_num">033-990-4566</string>
+    <string name="profile_adress">Address :</string>
+    <string name="profile_adress_num">22/3D Eula Road Gamapaha</string>
+    <string name="profile_about_des">I am mailnly looking for people who wants to exchange car parts for furniture or other car parts </string>
+    <string name="profile_logout_button">LOG OUT</string>
+    <string name="profile_update_button">Edit Profile</string>
+    <string name="title_activity_delete_user">DeleteUserActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
-    <!-- Groups view    -->
-    <string name="groups_tablayout_groups">Groups</string>
-    <string name="groups_tablayout_Invites">Invites</string>
-    <string name="groups_btn_accept">Accept</string>
-    <string name="groups_btn_reject">Reject</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">MainActivity2</string>
 
-    <!-- Group edit view    -->
-    <string name="group_edit_btn_change_picture">Change picture</string>
-    <string name="group_edit_txt_group_name">Group Name</string>
-    <string name="group_edit_txt_group_description">Group Description</string>
-    <string name="group_edit_btn_cancel">Cancel</string>
-    <string name="group_edit_btn_save">Save Changes</string>
+    <string name="Delete_user_title">Deleting the Account</string>
+    <string name="Delete_btn">Delete Account</string>
+    <string name="Delete_warning">Please note that user deletion is an irreversible action and should be used with caution.</string>
+    <string name="Delete_backNav">Go Back To Profile</string>
 
-    <!-- Group info view    -->
-    <string name="group_info_btn_invite">Invite</string>
-    <string name="group_info_txt_search_username">Search username</string>
-
-    <!-- group chat view    -->
-    <string name="chat_txt_type_message">Type message</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

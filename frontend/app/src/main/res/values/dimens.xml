@@ -1,29 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <dimen name="profile_image_small">50dp</dimen>
-    <dimen name="profile_image_large">125dp</dimen>
-
-    <!-- groups / group invites view  -->
-    <dimen name="groups_card_spacing">10dp</dimen>
-    <dimen name="groups_card_margin_h">10dp</dimen>
-    <dimen name="groups_card_margin_v">10dp</dimen>
-    <dimen name="groups_card_text_margin">20dp</dimen>
-    <dimen name="groups_card_button_margin">10dp</dimen>
-    <dimen name="groups_card_button_spacing">10dp</dimen>
-
-    <!-- chat view     -->
-    <dimen name="chat_margin_v">10dp</dimen>
-    <dimen name="chat_bubble_spacing">10dp</dimen>
-
-    <!-- group view    -->
-    <dimen name="group_view_margin_t">10dp</dimen>
-    <dimen name="group_view_margin_h">10dp</dimen>
-    <dimen name="group_view_item_spacing">20dp</dimen>
-    <dimen name="group_view_button_spacing">15dp</dimen>
-
-    <!-- text sizes   -->
-    <dimen name="text_size_h2">24dp</dimen>
-    <dimen name="text_size_h3">15dp</dimen>
-
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
