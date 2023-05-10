@@ -36,8 +36,6 @@
             android:layout_marginHorizontal="@dimen/group_view_margin_h"
             android:orientation="vertical">
 
-
-
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/iv_group_image"
                     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
@@ -112,6 +110,23 @@
                     android:layout_marginTop="2.8dp"
                     android:text="@string/group_info_btn_invite" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/group_view_item_spacing"
+                android:textStyle="bold"
+                android:text="Recent Chat Activity Report"
+                android:textSize="17dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_group_message_activity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
