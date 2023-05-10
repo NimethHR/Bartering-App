@@ -1,9 +1,8 @@
 package com.example.madproject.posts
 
-import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.madproject.MainActivity
 import com.example.madproject.R
@@ -83,8 +83,21 @@ class ViewPost : AppCompatActivity() {
                 isLiked = true
                 likeBtn.text = "Liked $likeCount"
             }
+            likeUpdate()
         }
         fetchData()
+    }
+
+    private fun likeUpdate(){
+        val likes = hashMapOf(
+            "likes" to likeCount
+        )
+
+        db.collection("posts").document(documentId!!)
+            .update("likes", likeCount)
+            .addOnSuccessListener { documentReference ->
+                Log.d(ContentValues.TAG, "Like count updated for Likes = $likeCount")
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
