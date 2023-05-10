@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ShapeAppearance.MADProject.TextBubble" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MADProject.AttachedItemRight" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MADProject.AttachedItemLeft" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+    </style>
+
+    <style name="fab_btn">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item>
+    </style>
+
+    <style name="like_btn">
+        <item name="colorContainer">#E83B3B</item>
+    </style>
+
+    <style name="need_post">
+        <item name="strokeColor">#E1800A</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="cardBackgroundColor">#FFFFFF</item>
+
+    </style>
+    <style name="have_post">
+        <item name="strokeColor">#036FF4</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="cardBackgroundColor">#FFFFFF</item>
+    </style>
+
+    <style name="free_post">
+        <item name="strokeColor">#197708</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="cardBackgroundColor">#FFFFFF</item>
+    </style>
+
+    <style name="view_post_background">
+        <item name="android:background">#95ABB1A9</item>
+
+    </style>
+
+</resources>

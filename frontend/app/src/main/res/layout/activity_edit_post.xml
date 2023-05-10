@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/create_appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextColor="@color/black"
+            android:background="?attr/colorPrimaryInverse"
+            app:title="@string/edit_post">
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/create_nestedScroll_description"
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_margin"
+                android:hint="@string/create_post_description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_post_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/create_text_field_width"
+                    />
+
+<!--                android:text="@string/lorem"-->
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                app:cardCornerRadius="8dp"                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="@dimen/horizontal_space"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/padding_small_small"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/create_file_picker"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                        <Button
+
+                        android:id="@+id/file_edit_btn"
+                        android:layout_width="@dimen/button_type_1_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                        android:text="@string/edit_file_picker"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="50dp"
+                >
+
+                <RadioGroup
+                    android:id="@+id/edit_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/haveRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/text_margin"
+                        android:text="@string/post_type_have" />
+
+                    <RadioButton
+                        android:id="@+id/needRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/post_type_need" />
+
+                    <RadioButton
+                        android:id="@+id/freeRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/post_type_donate" />
+                </RadioGroup>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="148dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/create_post_quantity_select"
+                        android:textAlignment="center"
+                        android:textSize="18dp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginBottom="10dp"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/edit_post_submit_btn"/>
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                android:text="@string/cancel_btn" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_bar"
+        android:layout_gravity="bottom"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
