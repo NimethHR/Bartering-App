@@ -228,7 +228,7 @@
                 android:insetLeft="@dimen/logout_sides"
                 android:insetTop="@dimen/logout_top"
                 android:insetRight="@dimen/logout_sides"
-                android:text="Log out"
+                android:text="Log out today"
                 app:cornerRadius="90dp" />
             <Button
                 android:id="@+id/dpdeleteuserbtn"

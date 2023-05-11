@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
 
                     firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val intent = Intent(this, UserProfileActivity::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                             Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT)
                                 .show()
@@ -111,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
         val logged = GoogleAuthProvider.getCredential(current.idToken,null)
         firebaseAuth.signInWithCredential(logged).addOnCompleteListener{
             if (it.isSuccessful){
-                val intent = Intent(this, AddprofActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this, "Successfully Logged in With Google", Toast.LENGTH_SHORT).show()
 
@@ -130,7 +130,7 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
 
         if (firebaseAuth.currentUser != null) {
-            val intent = Intent(this, UserProfileActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

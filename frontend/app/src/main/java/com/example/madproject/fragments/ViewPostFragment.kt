@@ -35,6 +35,8 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.example.madproject.ProfileDisplayContact
+import com.example.madproject.ProfileDisplayFragment
 import com.google.firebase.auth.ktx.auth
 import javax.annotation.Nullable
 
@@ -139,18 +141,27 @@ class ViewPostFragment : Fragment() {
             var auth = Firebase.auth
             var user = auth.currentUser
 
+
+
+
             if (user!= null){
+                var createdBy:String? = ""
+                var docRef = db.collection("posts").document(documentId!!)
+                docRef.get()
+                    .addOnSuccessListener {result ->
+                        if (result.exists()){
+                            createdBy = result.getString("user")
 
-                //TODO replace with user fragment
-//                val viewPostFragment = ViewPostFragment()
-//                val args = Bundle().apply {
-//                    putString("user", user?.uid)
-//                }
-//
-//                requireActivity().supportFragmentManager.beginTransaction()
-//                    .replace(R.id.fragment_container, viewPostFragment)
-//                    .commit()
-
+                            val profileDisplay = ProfileDisplayContact()
+                            val args = Bundle().apply {
+                                putString("user", createdBy)
+                            }
+                            profileDisplay.arguments = args
+                            requireActivity().supportFragmentManager.beginTransaction()
+                                .replace(R.id.fragment_container, profileDisplay)
+                                .commit()
+                            }
+                        }
             }else{
                 val inflater: LayoutInflater = layoutInflater
                 val layout: View = inflater.inflate(R.layout.toast, container, false)

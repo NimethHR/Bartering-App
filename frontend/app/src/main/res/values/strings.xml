@@ -10,7 +10,6 @@
     <string name="post_home">Posts</string>
 
 
-
     <!--  Post actions  -->
     <string name="post_title">Post title here</string>
     <string name="edit_post">Edit Post</string>
@@ -135,6 +134,8 @@
     <string name="Delete_warning">Please note that user deletion is an irreversible action and should be used with caution.</string>
     <string name="Delete_backNav">Go Back To Profile</string>
     <string name="search_btn">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
