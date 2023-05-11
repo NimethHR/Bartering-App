@@ -16,7 +16,6 @@ import com.google.firebase.storage.ktx.storage
 
 import android.content.ContentValues
 import android.content.ContentValues.TAG
-import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.MenuItem
@@ -25,9 +24,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.madproject.MainActivity
-import com.example.madproject.posts.EditPost
-import com.google.firebase.firestore.ktx.firestore
+
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import java.util.zip.Inflater
@@ -185,7 +182,7 @@ class ViewPostFragment : Fragment() {
         return rootView
     }
 
-    private fun likeUpdate(){
+    fun likeUpdate(){
         db.collection("posts").document(documentId!!)
             .update("likes", likeCount)
             .addOnSuccessListener { documentReference ->

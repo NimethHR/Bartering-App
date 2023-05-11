@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         bottomNavigationView = findViewById(R.id.bottom_nav_bar)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
