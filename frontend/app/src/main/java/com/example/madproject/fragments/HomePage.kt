@@ -67,6 +67,25 @@ class HomePage : Fragment() {
         adapter = PostAdapter(postsList)
         searchEditText = rootView.findViewById(R.id.search_bar_edit_text)
         val searchButton: Button = rootView.findViewById(R.id.search_button)
+        val toolbar : androidx.appcompat.widget.Toolbar = rootView.findViewById(R.id.home_page_toolbar)
+
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.admin_dashboard -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, AdminDashboard())
+                        .commit()
+                    true
+                }
+                R.id.add_feedback -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, AddFeedback())
+                        .commit()
+                    true
+                }
+                else -> false
+            }
+        }
 
         adapter.setOnItemClickListener { documentId ->
             var imageURL:String? = "ghjhk"

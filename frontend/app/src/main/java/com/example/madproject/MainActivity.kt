@@ -14,12 +14,7 @@ import com.google.firebase.auth.ktx.auth
 
 import android.util.Log
 import android.widget.Button
-
-import com.example.madproject.fragments.GroupListFragment
-import com.example.madproject.fragments.AdminDashboard
-import com.example.madproject.fragments.CreatePostFragment
-import com.example.madproject.fragments.GroupListFragment
-import com.example.madproject.fragments.HomePage
+import com.example.madproject.fragments.*
 
 import com.google.firebase.ktx.Firebase
 
@@ -44,10 +39,10 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, ProfileDisplayFragment()).commit()
                     true
                 }
-                R.id.bottom_nav_bar_dashboard -> {
+                R.id.bottom_nav_bar_notices -> {
 //                    Navbar button to admin_dash board
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, AdminDashboard()).commit()
+                        .replace(R.id.fragment_container, AllUserNotices()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_post -> {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Admin Dashboard"
+        android:id="@+id/admin_dashboard" />
+    <item android:title="Add Feedback"
+        android:id="@+id/add_feedback" />
+
+
+</menu>
