@@ -69,9 +69,9 @@ class GroupViewFragment() : Fragment() {
 
             DatabaseFunctions.sendMessage(
                 Message(
-                    message,
-                    currentUser.uid,
-                    currentUser.displayName ?: currentUser.email ?: "Unknown"
+                    content = message,
+                    senderId = currentUser.uid,
+                    senderName = currentUser.displayName ?: currentUser.email ?: "Anonymous"
                 ),
                 id ?: return@setOnClickListener)
         }

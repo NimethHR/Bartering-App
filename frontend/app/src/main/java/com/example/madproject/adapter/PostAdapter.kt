@@ -13,8 +13,7 @@ import com.example.madproject.models.Post
 import com.example.madproject.models.PostUnit
 import com.google.android.material.card.MaterialCardView
 
-class PostAdapter(private val posts: List<PostUnit>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
-
+class PostAdapter(private var posts: List<PostUnit>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
     private var onItemClickListener: ((String) -> Unit)? = null
 
     class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,6 +27,7 @@ class PostAdapter(private val posts: List<PostUnit>) : RecyclerView.Adapter<Post
 
     fun setOnItemClickListener(listener: (String) -> Unit) {
         onItemClickListener = listener
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -54,7 +54,10 @@ class PostAdapter(private val posts: List<PostUnit>) : RecyclerView.Adapter<Post
             .load(post.imageDownloadUrl)
             .placeholder(R.drawable.loading_bar)
             .into(holder.imageView)
-
+    }
+    fun updateData(searchResults: List<PostUnit>) {
+        posts = searchResults
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

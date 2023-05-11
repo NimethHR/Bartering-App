@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateprofActivity">
+
+    <TextView
+        android:id="@+id/pupdateTitle"
+        android:layout_width="408dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="48dp"
+        android:text="Update Profile Details"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+
+    android:id="@+id/uprofusername"
+    android:layout_width="376dp"
+    android:layout_height="58dp"
+    android:layout_marginTop="36dp"
+    android:background="#EED7FD"
+    android:backgroundTint="#EBD6F8"
+    android:ems="10"
+    android:hint="  Update User Name"
+    android:inputType="text"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.485"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/pupdateTitle" />
+
+    <EditText
+
+        android:id="@+id/uprofemail"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Update contact Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uprofusername" />
+
+    <EditText
+        android:id="@+id/uprofphnum"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Update Phone Number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uprofemail" />
+
+    <EditText
+        android:id="@+id/uproftellnumb"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Update Tell Number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uprofphnum" />
+
+    <EditText
+        android:id="@+id/uprofaddress"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Update Address"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uproftellnumb" />
+
+    <EditText
+
+        android:id="@+id/uprofdesc"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="   Update Description"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uprofaddress" />
+
+    <Button
+        android:id="@+id/updateDatabtn"
+        android:layout_width="190dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="40dp"
+        android:text="Update Data"
+        android:visibility="visible"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uprofdesc"
+        app:layout_constraintVertical_bias="0.718" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

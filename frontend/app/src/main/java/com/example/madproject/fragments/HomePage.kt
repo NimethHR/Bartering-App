@@ -7,17 +7,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
 import com.example.madproject.adapter.PostAdapter
+import com.example.madproject.models.Post
 import com.example.madproject.models.PostUnit
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.firestore.DocumentSnapshot
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,6 +41,10 @@ class HomePage : Fragment() {
 
     private lateinit var rootView: View
     private val postsList: MutableList<PostUnit> = mutableListOf()
+    private lateinit var searchEditText: TextInputEditText
+    private val searchResultsList = mutableListOf<PostUnit>()
+    private lateinit var adapter: PostAdapter
+
 //    private lateinit var adapter: PostAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,12 +64,12 @@ class HomePage : Fragment() {
 
         val recyclerView: RecyclerView = rootView.findViewById(R.id.home_page_recycler)
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(requireContext(), 2)
-        val adapter: PostAdapter = PostAdapter(postsList)
+        adapter = PostAdapter(postsList)
+        searchEditText = rootView.findViewById(R.id.search_bar_edit_text)
+        val searchButton: Button = rootView.findViewById(R.id.search_button)
 
         adapter.setOnItemClickListener { documentId ->
-
             var imageURL:String? = "ghjhk"
-
             var docRef = db.collection("posts").document(documentId)
             docRef.get()
                 .addOnSuccessListener { result ->
@@ -96,6 +103,13 @@ class HomePage : Fragment() {
                 }
         }
 
+        searchButton.setOnClickListener {
+            val query = searchEditText.text.toString()
+//            adapter = PostAdapter(searchResultsList)
+
+            searchDocs(query)
+        }
+
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
@@ -117,10 +131,34 @@ class HomePage : Fragment() {
                 // Handle any errors that occurred while fetching data
                 Log.e(TAG, "Error getting posts: $exception")
             }
-
-
-//        fetchData()
         return rootView
+    }
+
+    private fun searchDocs(query: String) {
+        val queryText = query.lowercase()
+
+        val searchQuery = db.collection("posts")
+            .whereEqualTo("title", query)
+
+        searchQuery.get()
+            .addOnSuccessListener { querySnapshot ->
+                // Process the search results
+                val searchResults = querySnapshot.toObjects<PostUnit>()
+                // Update the RecyclerView or display search results
+                Log.e(TAG, "Search resuslts: $searchResults")
+
+                searchResultsList.clear()
+                searchResultsList.addAll(searchResults)
+                adapter.updateData(searchResultsList)
+
+                adapter.notifyDataSetChanged()
+
+                // Clear the search query
+                searchEditText.text?.clear()
+            }
+            .addOnFailureListener { exception ->
+                searchEditText.setText("No resuslts matching $query")
+            }
     }
 
 //    private fun fetchData() {

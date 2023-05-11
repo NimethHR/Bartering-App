@@ -14,7 +14,9 @@ import com.google.firebase.auth.ktx.auth
 
 import android.util.Log
 import android.widget.Button
+import com.example.madproject.fragments.AdminDashboard
 import com.example.madproject.fragments.CreatePostFragment
+import com.example.madproject.fragments.GroupListFragment
 import com.example.madproject.fragments.HomePage
 
 import com.google.firebase.ktx.Firebase
@@ -30,15 +32,21 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.bottom_nav_bar)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
-            when(item.itemId){
-                R.id.bottom_nav_bar_groups -> {
-//                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
+            when (item.itemId) {
+                R.id.bottom_nav_bar_groups ->{
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, GroupListFragment()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_profile -> {
                     true
                 }
-
+                R.id.bottom_nav_bar_dashboard -> {
+//                    Navbar button to admin_dash board
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, AdminDashboard()).commit()
+                    true
+                }
                 R.id.bottom_nav_bar_post -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_container, CreatePostFragment()).commit()
                     true
@@ -62,4 +70,4 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword("test@gmail.com", "password")
     }
 
-}
+    }

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddprofActivity">
+
+
+    <TextView
+        android:id="@+id/pEditTitle"
+        android:layout_width="408dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="48dp"
+        android:text="Add Profile Details"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    D<EditText
+
+        android:id="@+id/profusername"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="36dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Add a User Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pEditTitle" />
+
+    <EditText
+
+        android:id="@+id/profemail"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Add a contact Email"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profusername" />
+
+    <EditText
+        android:id="@+id/profphnum"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Add a Phone Number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profemail" />
+
+    <EditText
+        android:id="@+id/proftellnumb"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Add a Tell Number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profphnum" />
+
+    <EditText
+        android:id="@+id/profaddress"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Address"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proftellnumb" />
+
+    <EditText
+
+        android:id="@+id/profdesc"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="#EED7FD"
+        android:backgroundTint="#EBD6F8"
+        android:ems="10"
+        android:hint="  Add a Description"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profaddress" />
+
+    <Button
+        android:id="@+id/addDatabtn"
+        android:layout_width="190dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="40dp"
+        android:text="Add Data"
+        android:visibility="visible"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profdesc"
+        app:layout_constraintVertical_bias="0.718" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

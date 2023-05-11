@@ -2,16 +2,23 @@ package com.example.madproject.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.ContactsContract.Data
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
 import com.example.madproject.databinding.FragmentGroupInfoBinding
 import com.example.madproject.util.DatabaseFunctions
+
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.madproject.adapters.ChatActivityAdapter
+import com.example.madproject.adapters.GroupInvitesAdapter
 import com.example.madproject.util.StorageFunctions
-import io.grpc.Context.Storage
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,6 +54,14 @@ class GroupInfoFragment : Fragment() {
         binding.groupInfoToolbar.title = name
         binding.tvGroupViewName.text = name
         binding.tvGroupViewDescription.text = description
+
+        Glide.with(binding.root.context)
+            .load(StorageFunctions.getGroupImageUrl(id!!))
+            .circleCrop()
+            .placeholder(R.drawable.baseline_groups_24)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
+            .into(binding.ivGroupImage)
 
         binding.groupInfoToolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -93,6 +108,17 @@ class GroupInfoFragment : Fragment() {
                     binding.etGroupViewInvite.text?.clear()
                 }
             }
+        }
+
+        DatabaseFunctions.getChatActivity(id!!) { chatActivity ->
+            if (chatActivity == null) {
+                return@getChatActivity
+            }
+
+            val adapter = ChatActivityAdapter(chatActivity)
+            val recyclerView: RecyclerView = binding.rvGroupMessageActivity
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(context)
         }
 
         return binding.root
