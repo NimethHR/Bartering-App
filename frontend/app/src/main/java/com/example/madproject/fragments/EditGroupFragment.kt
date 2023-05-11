@@ -3,6 +3,7 @@ package com.example.madproject.fragments
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -10,10 +11,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.madproject.R
 import com.example.madproject.databinding.FragmentEditGroupBinding
 import com.example.madproject.util.DatabaseFunctions
 import com.example.madproject.util.StorageFunctions
+import java.io.File
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,8 +56,21 @@ class EditGroupFragment : Fragment() {
         binding.groupEditToolbar.title = name
         binding.etEditGroupDescription.setText(description)
 
+        Glide.with(binding.root.context)
+            .load(StorageFunctions.getGroupImageUrl(id!!))
+            .circleCrop()
+            .placeholder(R.drawable.baseline_groups_24)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
+            .into(binding.ivEditGroupImage)
+
         binding.btnEditGroupSave.setOnClickListener() {
             val newDescription = binding.etEditGroupDescription.text.toString()
+
+            if (!newDescription.isNullOrEmpty() && newDescription.length > 150) {
+                binding.etEditGroupDescription.error = "Description must be less than 150 characters"
+                return@setOnClickListener
+            }
 
             DatabaseFunctions.updateGroup(id ?: return@setOnClickListener, newDescription)
             StorageFunctions.uploadImage(fileUri ?: return@setOnClickListener, "groups", id ?: return@setOnClickListener)
@@ -80,8 +97,7 @@ class EditGroupFragment : Fragment() {
         val binding : FragmentEditGroupBinding = FragmentEditGroupBinding.inflate(layoutInflater)
         if (requestCode == 22 && resultCode == RESULT_OK && data != null && data.data != null) {
             fileUri = data.data
-            val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, fileUri)
-            binding.ivEditGroupImage.setImageBitmap(bitmap)
+
         }
     }
 

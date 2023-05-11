@@ -252,15 +252,11 @@ class ViewPostFragment : Fragment() {
                                     toast.view = layout
                                     toast.show()
 
+                                    val homePageFragment = HomePage()
 
-//                                    val homePage = MainActivity()
-//
-//                                    requireActivity().supportFragmentManager.beginTransaction()
-//                                        .replace(R.id.fragment_container, homePage)
-//                                        .commit()
-
-                                    val intent = Intent(requireContext(), MainActivity::class.java)
-                                    startActivity(intent)
+                                    requireActivity().supportFragmentManager.beginTransaction()
+                                        .replace(R.id.fragment_container, homePageFragment)
+                                        .commit()
 
                                 }?.addOnFailureListener {
                                     Log.d(TAG, "Error deleting Image file from cloud storage")
@@ -299,7 +295,7 @@ class ViewPostFragment : Fragment() {
         Glide.with(requireContext())
             .load(imageDownloadUrl)
             .placeholder(R.drawable.loading_bar)
-            .centerCrop()
+            .fitCenter()
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
                     @Nullable e: GlideException?,

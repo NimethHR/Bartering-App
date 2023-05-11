@@ -11,10 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/groups_card_spacing"
         android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:longClickable="true"
-        android:id="@+id/group_card"
+        android:id="@+id/activity_card"
         >
 
         <LinearLayout
@@ -25,27 +22,26 @@
             android:orientation="horizontal"
             >
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="@dimen/profile_image_small"
-                android:layout_height="@dimen/profile_image_small"
-                android:layout_gravity="center"
-                android:src="@mipmap/default_profile_image"
-                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
-                tools:srcCompat="@tools:sample/avatars"
-                android:id="@+id/iv_group_image"
-                />
-
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:text="@string/default_group_name"
-                android:textStyle="bold"
-                android:id="@+id/group_name"
+                android:text="loading..."
+                android:id="@+id/activity_day"
+                android:layout_weight="1"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:text="0"
+                android:textStyle="bold"
+                android:id="@+id/activity_count"
+                />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
