@@ -77,6 +77,8 @@
 
     <!-- group chat view    -->
     <string name="chat_txt_type_message">Type message</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_notice">Add a Notice</string>
@@ -136,6 +138,7 @@
     <string name="Delete_btn">Delete Account</string>
     <string name="Delete_warning">Please note that user deletion is an irreversible action and should be used with caution.</string>
     <string name="Delete_backNav">Go Back To Profile</string>
+    <string name="search_btn">Search</string>
 
 
 </resources>
