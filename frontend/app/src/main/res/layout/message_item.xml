@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +18,9 @@
             android:layout_width="@dimen/profile_image_small"
             android:layout_height="@dimen/profile_image_small"
             android:layout_gravity="bottom"
-            android:src="@mipmap/default_profile_image" />
+            android:src="@mipmap/default_profile_image"
+            android:id="@+id/iv_message_view_image"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             app:boxBackgroundColor="?attr/colorPrimaryContainer"
@@ -29,7 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginStart="10dp">
+            android:layout_marginStart="10dp"
+            android:id="@+id/til_message_view_message"
+            app:helperTextEnabled="true"
+            app:helperText="username"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

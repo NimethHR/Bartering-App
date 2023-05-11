@@ -1,0 +1,93 @@
+package com.example.madproject.fragments
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import com.example.madproject.R
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [AdminDashboard.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class AdminDashboard : Fragment() {
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
+
+    private lateinit var addNewNotice: Button
+    private lateinit var viewAllNotices: Button
+    private lateinit var viewAllFeedbacks: Button
+    private lateinit var addMemo:Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        val view = inflater.inflate(R.layout.fragment_admin_dashboard, container, false)
+        addNewNotice = view.findViewById(R.id.addNewNotice)
+        viewAllNotices = view.findViewById(R.id.addFeedBtn)
+        viewAllFeedbacks = view.findViewById(R.id.viewAllFeedbacks)
+
+        addNewNotice.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,AddNotice())
+                .addToBackStack(null)
+                .commit()
+        }
+        viewAllNotices.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,AllNotices())
+                .addToBackStack(null)
+                .commit()
+        }
+        viewAllFeedbacks.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,AllFeedbacks())
+                .addToBackStack(null)
+                .commit()
+        }
+
+//            parentFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupInfoFragment.newInstance(id, group?.name, group?.description)).addToBackStack(null).commit()
+//            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,AllNotices()).addToBackStack(null).commit()
+        return view
+    }
+
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment AdminDashboard.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            AdminDashboard().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
+}

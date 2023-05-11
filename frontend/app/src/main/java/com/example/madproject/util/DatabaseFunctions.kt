@@ -1,17 +1,22 @@
 package com.example.madproject.util
 
+import android.text.format.DateUtils
 import com.example.madproject.models.GroupInvite
 import com.example.madproject.models.Message
 import com.example.madproject.models.NewGroup
 import com.example.madproject.models.User
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FieldPath
-import com.google.firebase.firestore.FieldValue
-import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.util.*
 
 object DatabaseFunctions {
 
@@ -45,6 +50,11 @@ object DatabaseFunctions {
 
     fun getCurrentUserFromFirestore(onComplete: (result: User?) -> Unit) {
         val db = Firebase.firestore
+        val currentUser = getCurrentUser()
+        if (currentUser == null){
+            onComplete(null)
+            return
+        }
         val userRef = db.collection("users").document(getCurrentUser()!!.uid)
 
         userRef.get()
@@ -237,4 +247,54 @@ object DatabaseFunctions {
                 }
             }
     }
+
+    fun getChatActivity(groupId: String, onComplete: (result: List<Pair<String,Long>>?) -> Unit) {
+        val db = Firebase.firestore
+        val messagesRef = db.collection("groups").document(groupId).collection("messages")
+
+        val tasks = mutableListOf<Pair<String, Task<AggregateQuerySnapshot>>>() // pair of date and task
+
+        //get today midnight milliseconds
+
+
+        for (i in 0..10) {
+            val millisFrom = Calendar.getInstance().apply {
+                add(Calendar.DAY_OF_MONTH, -i)
+                set(Calendar.HOUR_OF_DAY, 0)
+                set(Calendar.MINUTE, 0)
+                set(Calendar.SECOND, 0)
+            }.timeInMillis
+
+            val millistTo = Calendar.getInstance().apply {
+                add(Calendar.DAY_OF_MONTH, -i)
+                set(Calendar.HOUR_OF_DAY, 23)
+                set(Calendar.MINUTE, 59)
+                set(Calendar.SECOND, 59)
+            }.timeInMillis
+
+
+            tasks.add(Pair(SimpleDateFormat("yyyy-MM-dd").format(Date(millisFrom)), messagesRef
+                .whereGreaterThanOrEqualTo("timestamp", Date(millisFrom))
+                .whereLessThanOrEqualTo("timestamp", Date(millistTo))
+                .count()
+                .get(AggregateSource.SERVER)))
+
+        }
+
+        Tasks.whenAllComplete(tasks.map { it.second }).addOnCompleteListener {
+            if (it.isSuccessful) {
+                val result = mutableListOf<Pair<String, Long>>()
+                for (i in 0..10) {
+                    val task = tasks[i]
+                    val date = task.first
+                    val count = task.second.result.count
+                    result.add(Pair(date, count))
+                }
+                onComplete(result)
+            } else {
+                onComplete(null)
+            }
+        }
+    }
+
 }
