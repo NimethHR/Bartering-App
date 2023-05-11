@@ -5,8 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madproject.R
 import com.example.madproject.models.Notice
@@ -22,8 +20,8 @@ class NoticeAdp(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val titleTextView: EditText= itemView.findViewById(R.id.feedback)
-        val descriptionTextView: EditText= itemView.findViewById(R.id.descriptionTextView)
+        val titleTextView: EditText= itemView.findViewById(R.id.userfeedback)
+        val descriptionTextView: EditText= itemView.findViewById(R.id.usereDscription)
         var button: Button = itemView.findViewById(R.id.delete)
         var update: Button = itemView.findViewById(R.id.updateNotice)
     }

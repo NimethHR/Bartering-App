@@ -18,19 +18,19 @@ class FeedbackAdp(
 
     val db = Firebase.firestore
 
-    class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        val feedback : TextView = itemView.findViewById(R.id.feedback1)
-        val delete:Button = itemView.findViewById(R.id.deletefeed)
+    class ViewHolder(fitemView:View):RecyclerView.ViewHolder(fitemView){
+        val feedback : TextView = fitemView.findViewById(R.id.feedback1)
+        val delete:Button = fitemView.findViewById(R.id.deletefeed)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.feebback_card,parent,false)
-        return ViewHolder(itemView)
+        val fitemView = LayoutInflater.from(parent.context).inflate(R.layout.feebback_card,parent,false)
+        return ViewHolder(fitemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val feed = feedbacks[position]
-        holder.feedback.text = feed.feedback
+        holder.feedback.setText(feed.feedback)
         holder.delete.setOnClickListener {
             val documentReference: DocumentReference = db.document("Feedbacks/"+feed.id);
             documentReference.delete().addOnSuccessListener {

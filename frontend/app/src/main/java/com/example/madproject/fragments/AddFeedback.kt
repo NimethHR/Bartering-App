@@ -30,6 +30,7 @@ class AddFeedback : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var regex:Regex? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +53,14 @@ class AddFeedback : Fragment() {
         submitBtn.setOnClickListener {
 
         val feedback = view.findViewById<TextView>(R.id.feedText).text.toString()
-        val feed = hashMapOf(
+
+//            validate the feedback
+            if(feedback.length == 0){
+                Toast.makeText(activity,"Feedback is empty", Toast.LENGTH_SHORT).show()
+            }else if(badwordDetector(feedback)== true){
+                Toast.makeText(activity,"Do not enter bad words", Toast.LENGTH_SHORT).show()
+        }else{
+            val feed = hashMapOf(
             "Feedback" to feedback
         )
             db.collection("Feedbacks")
@@ -66,8 +74,15 @@ class AddFeedback : Fragment() {
 //            goto home is here
             Toast.makeText(activity,"Feedback is added", Toast.LENGTH_SHORT).show()
             parentFragmentManager.beginTransaction().replace(R.id.fragment_container,AddNotice()).addToBackStack(null).commit()
-        }
+                }
+            }
         return view
+    }
+
+    private fun badwordDetector(word:String):Boolean{
+        regex = Regex(pattern = "(badword1|badword2)")
+        val matched = regex!!.containsMatchIn(input = word)
+        return matched
     }
 
     companion object {
