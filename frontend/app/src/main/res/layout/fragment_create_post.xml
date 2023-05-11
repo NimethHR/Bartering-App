@@ -2,6 +2,12 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CreatePostFragment">
+
+    <!-- TODO: Update blank fragment layout -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
 
         android:layout_width="match_parent"
@@ -111,31 +117,33 @@
                     >
 
                     <RadioGroup
+                        android:id="@+id/type_radio_group"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:checkedButton="@id/haveRadioButton">
 
                         <RadioButton
-                                android:id="@+id/haveRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:paddingLeft="@dimen/text_margin"
-                                android:text="@string/post_type_have" />
+                            android:id="@+id/haveRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/text_margin"
+                            android:text="@string/post_type_have" />
 
-                            <RadioButton
-                                android:id="@+id/needRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/post_type_need" />
+                        <RadioButton
+                            android:id="@+id/needRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/post_type_need" />
 
-                            <RadioButton
-                                android:id="@+id/freeRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/post_type_donate" />
+                        <RadioButton
+                            android:id="@+id/freeRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/post_type_donate" />
 
                     </RadioGroup>
 
@@ -161,15 +169,15 @@
                             android:layout_marginTop="5dp"
                             android:text="@string/create_post_quantity_select"
                             android:textAlignment="center"
-                            android:textSize="18dp">
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
                         <EditText
                             android:id="@+id/editTextNumberDecimal2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/container_height_3"
+                            android:layout_marginStart="@dimen/container_height_3"
                             android:layout_marginBottom="@dimen/small_small_padding"
                             android:layout_weight="1"
                             android:ems="10"
@@ -197,12 +205,7 @@
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/bottom_nav_bar"
-            android:layout_gravity="bottom"
-            />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</layout>
+
+</FrameLayout>
+    </layout>
