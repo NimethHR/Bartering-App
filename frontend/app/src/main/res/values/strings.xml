@@ -51,9 +51,6 @@
     <string name="sample_post_6">Ful table set</string>
     <string name="quantityNumField">Enter number of items</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!-- Default values    -->
     <string name="default_group_name">[group name]</string>
     <string name="default_group_description">[group description] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis consectetur sapien, vitae aliquam lectus fermentum vitae.</string>
