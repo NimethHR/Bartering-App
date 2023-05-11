@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_nav_bar_profile -> {
-
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, ProfileDisplayFragment()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_dashboard -> {
