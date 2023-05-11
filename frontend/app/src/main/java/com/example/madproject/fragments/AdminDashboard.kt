@@ -27,7 +27,9 @@ class AdminDashboard : Fragment() {
     private lateinit var addNewNotice: Button
     private lateinit var viewAllNotices: Button
     private lateinit var viewAllFeedbacks: Button
-    private lateinit var addMemo:Button
+
+    private lateinit var test:Button
+    private lateinit var addFeed:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +49,10 @@ class AdminDashboard : Fragment() {
         viewAllNotices = view.findViewById(R.id.addFeedBtn)
         viewAllFeedbacks = view.findViewById(R.id.viewAllFeedbacks)
 
+        test = view.findViewById(R.id.test)
+        addFeed = view.findViewById(R.id.addFeed)
+
+
         addNewNotice.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container,AddNotice())
@@ -65,9 +71,20 @@ class AdminDashboard : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-
-//            parentFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupInfoFragment.newInstance(id, group?.name, group?.description)).addToBackStack(null).commit()
-//            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,AllNotices()).addToBackStack(null).commit()
+//        ####################################################################
+        test.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,AllUserNotices())
+                .addToBackStack(null)
+                .commit()
+        }
+        addFeed.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,AddFeedback())
+                .addToBackStack(null)
+                .commit()
+        }
+//        ####################################################################
         return view
     }
 

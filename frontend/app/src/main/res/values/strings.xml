@@ -84,7 +84,7 @@
     <string name="AddTitleOfNotice">Add Title of notice</string>
     <string name="AddDescriptionofnotice">Add Description of notice</string>
     <string name="badkToDash">Dashboard</string>
-    <string name="delete">Delete Notice</string>
+    <string name="delete">Delete</string>
     <string name="feedC">Feed Count</string>
     <string name="enterFeed">Enter your feedback</string>
     <string name="nameForFeed">Your Feedbadk is gold For us</string>
@@ -92,5 +92,11 @@
     <string name="AddMemo">Add a Memo</string>
     <string name="AddMemoTitle">"Add Memo title "</string>
     <string name="updateNotice">Update</string>
+    <string name="NameValueFeed">Feedback</string>
+    <string name="UserFeedTitle">Notice</string>
+    <string name="UserFeedDescrip">Notice Description</string>
+    <string name="DeleteFeed">Delete Feed</string>
+    <string name="noticetite">Title</string>
+    <string name="noticeDes">Description</string>
 
 </resources>

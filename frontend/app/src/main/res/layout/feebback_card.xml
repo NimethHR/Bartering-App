@@ -4,22 +4,28 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#E1BEE7"
+        android:layout_margin="4dp"
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="4dp"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/purple_card"
                 android:orientation="vertical"
                 android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/nameFeedBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NameValueFeed" />
 
                 <TextView
                     android:id="@+id/feedback1"
@@ -37,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/delete" />
+                    android:text="@string/DeleteFeed" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
