@@ -68,14 +68,16 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:textAlignment="center"
-                            style="@style/TextAppearance.MaterialComponents.Headline5">
+                            style="@style/TextAppearance.MaterialComponents.Headline4"
+                            android:textColor="@color/black">
 
                         </com.google.android.material.textview.MaterialTextView>
 
                         <ImageView
                             android:id="@+id/imageView3"
                             android:layout_width="match_parent"
-                            android:layout_height="400dp"
+                            android:layout_height="300dp"
+                            android:scaleType="centerCrop"
                             />
                     </LinearLayout>
 
