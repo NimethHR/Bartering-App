@@ -51,7 +51,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ViewPostFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+//    variable initizations
     private var param1: String? = null
     private var param2: String? = null
 
@@ -95,19 +95,21 @@ class ViewPostFragment : Fragment() {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_view_post, container, false)
 
+//        getting arguments from previous fragment
         arguments?.let {
             documentId = it.getString("documentId")
             imageDownloadUrl = it.getString("imageDownloadUrl")
         }
 
 
-
+//logging for testing
         Log.d("Tag", "document id in ViewPost: $documentId")
 
         val toolbar = rootView.findViewById<Toolbar>(R.id.create_toolbar)
         (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
         setHasOptionsMenu(true)
 
+//        view initizations
         likeBtn = rootView.findViewById(R.id.likeBtn)
         titleTextView = rootView.findViewById(R.id.view_post_title)
         descTextView = rootView.findViewById(R.id.view_post_desc)
@@ -118,6 +120,7 @@ class ViewPostFragment : Fragment() {
         shareBtn = rootView.findViewById(R.id.share_btn)
 
 
+        //        like button on click listener
         likeBtn.setOnClickListener {
             if (isLiked){
                 isLiked = false
@@ -137,12 +140,10 @@ class ViewPostFragment : Fragment() {
             likeUpdate()
         }
 
+        //        contact button on click listener
         contactBtn.setOnClickListener {
             var auth = Firebase.auth
             var user = auth.currentUser
-
-
-
 
             if (user!= null){
                 var createdBy:String? = ""
@@ -175,9 +176,11 @@ class ViewPostFragment : Fragment() {
             }
         }
 
+        //        share button on click listener
         shareBtn.setOnClickListener {
             val textToShare = "Check out this awesome post: $title"
 
+//            open share menu
             val shareIntent = ShareCompat.IntentBuilder.from(requireActivity())
                 .setType("text/plain")
                 .setText(textToShare)
@@ -193,6 +196,7 @@ class ViewPostFragment : Fragment() {
         return rootView
     }
 
+//    function to update like count on Like button click
     fun likeUpdate(){
         db.collection("posts").document(documentId!!)
             .update("likes", likeCount)
@@ -206,6 +210,7 @@ class ViewPostFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+//    menu item select handler
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.toolbar_edit -> {
@@ -216,6 +221,7 @@ class ViewPostFragment : Fragment() {
                     putString("documentId", documentId)
                 }
 
+//                redirecting to edit fragment with arguments (docID)
                 editPostFragment.arguments = args
 
                 requireActivity().supportFragmentManager.beginTransaction()
@@ -225,6 +231,7 @@ class ViewPostFragment : Fragment() {
             }
             R.id.toolbar_delete -> {
 
+//                toolbar onclick actions
                 val alertDialogBuilder = AlertDialog.Builder(requireContext())
                 alertDialogBuilder.setTitle("Confirm Delete")
                 alertDialogBuilder.setMessage("Are you sure you want to delete this post?")
@@ -232,22 +239,22 @@ class ViewPostFragment : Fragment() {
                 //TODO - Add +ve and -ve options
 
                 alertDialogBuilder.setPositiveButton("Delete") { dialog, which ->
-                    // Perform the delete operation here
-                    // Example: deleteItem()
-
                     // Handle Delete button click
+//                    delete data from firebase
                     val docRef = db.collection("posts").document(documentId!!)
                     docRef
                         .delete()
                         .addOnSuccessListener {
                             Log.d(TAG, "Post successfully deleted from firestore")
 
+//                            firestore, storage initiziation
                             val storage = Firebase.storage
                             val storageRef = storage.reference
                             val imageRef: StorageReference? = storageRef.child("posts/$documentId.jpg")
 
                             imageRef?.delete()
                                 ?.addOnSuccessListener {
+//                                    when delete is successfull
                                     Log.d(TAG, "Image file successfully deleted from cloud storage")
 
                                     val inflater: LayoutInflater = layoutInflater
@@ -267,16 +274,18 @@ class ViewPostFragment : Fragment() {
                                         .commit()
 
                                 }?.addOnFailureListener {
+//                                    can't delete file
                                     Log.d(TAG, "Error deleting Image file from cloud storage")
                                 }
                         }
                         .addOnFailureListener { e -> Log.w(TAG, "Error deleting Post", e) }
 
                 }
+//                dialog prompt for cancel
                 alertDialogBuilder.setNegativeButton("Cancel") { dialog, which ->
                     dialog.dismiss()
                 }
-
+//show prompt
                 val alertDialog = alertDialogBuilder.create()
                 alertDialog.show()
                 true
@@ -285,6 +294,7 @@ class ViewPostFragment : Fragment() {
         }
     }
 
+//    load image function
     private fun loadImage() {
         var imageURL:String? = ""
         Log.w(TAG, "################ Image $imageDownloadUrl #################")
@@ -295,11 +305,13 @@ class ViewPostFragment : Fragment() {
             arguments?.let {
                 imageURL = it.getString("imageURL")
                 Log.w(TAG, "imageURl value:  $imageURL")
+//                getting download url from previous fragment
 
             }
             imageDownloadUrl = imageURL
         }
 
+//    Fetch and show image with Glide
         Glide.with(requireContext())
             .load(imageDownloadUrl)
             .placeholder(R.drawable.loading_bar)
@@ -311,7 +323,7 @@ class ViewPostFragment : Fragment() {
                     target: Target<Drawable>,
                     isFirstResource: Boolean
                 ): Boolean {
-                    // Handle the case when image loading fails, e.g., show an error message
+                    // image loading fails, e.g., show an error message
                     Log.w(TAG, "################ Image Loading failed #################")
                     return false
                 }
@@ -322,7 +334,7 @@ class ViewPostFragment : Fragment() {
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-                    // Image loading succeeded, update the flag
+                    // Image loading succeeded
                     isImageLoaded = true
 //                    updateImageVisibility()
                     return false
@@ -331,6 +343,7 @@ class ViewPostFragment : Fragment() {
             .into(postImage)
     }
 
+//    function to fetch data fro firebase and inject into layout views
     private fun fetchData(){
         val storageRef = storage.reference
         val imageRef = storageRef.child("posts/$documentId.jpg")
@@ -338,12 +351,15 @@ class ViewPostFragment : Fragment() {
 
         val docRef = db.collection("posts").document(documentId!!)
 
+//    call loadImage() function
         loadImage()
         Log.w(TAG, "imageDownloadUrl has a value, Loading Image.......")
+//    logging for testing
 
         docRef.get()
             .addOnSuccessListener { result ->
                 if (result.exists()){
+//                    if docs exist
                     title = result.getString("title").toString()
                     val desc = result.getString("description")
                     val type = result.getString("type")
@@ -362,6 +378,7 @@ class ViewPostFragment : Fragment() {
                 }
             }
             .addOnFailureListener { exception ->
+//                if docs don't exist
                 Log.w(TAG, "Error getting documents.", exception)
             }
     }

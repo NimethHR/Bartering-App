@@ -62,6 +62,7 @@ class HomePage : Fragment() {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_home_page, container, false)
 
+        //View initiziation
         val recyclerView: RecyclerView = rootView.findViewById(R.id.home_page_recycler)
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(requireContext(), 2)
         adapter = PostAdapter(postsList)
@@ -69,6 +70,7 @@ class HomePage : Fragment() {
         val searchButton: Button = rootView.findViewById(R.id.search_button)
         val toolbar : androidx.appcompat.widget.Toolbar = rootView.findViewById(R.id.home_page_toolbar)
 
+//        tool bar onclick actions
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.admin_dashboard -> {
@@ -87,6 +89,7 @@ class HomePage : Fragment() {
             }
         }
 
+//        recycler view onclick redirect
         adapter.setOnItemClickListener { documentId ->
             var imageURL:String? = "ghjhk"
             var docRef = db.collection("posts").document(documentId)
@@ -122,6 +125,7 @@ class HomePage : Fragment() {
                 }
         }
 
+//        search button on click listener
         searchButton.setOnClickListener {
             val query = searchEditText.text.toString()
 //            adapter = PostAdapter(searchResultsList)
@@ -132,6 +136,7 @@ class HomePage : Fragment() {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
+//        fetching data from firebase to inject into views
         val postCollectionRef = db.collection("posts")
         Log.e(TAG, "postCollectionRef has: $postCollectionRef")
 
@@ -153,11 +158,13 @@ class HomePage : Fragment() {
         return rootView
     }
 
+//    function to search fitestore with argument query
     private fun searchDocs(query: String) {
         val queryText = query.lowercase()
 
         val searchQuery = db.collection("posts")
             .whereEqualTo("title", query)
+//    getting results from db
 
         searchQuery.get()
             .addOnSuccessListener { querySnapshot ->
@@ -166,6 +173,7 @@ class HomePage : Fragment() {
                 // Update the RecyclerView or display search results
                 Log.e(TAG, "Search resuslts: $searchResults")
 
+//                clearing field before adding data
                 searchResultsList.clear()
                 searchResultsList.addAll(searchResults)
                 adapter.updateData(searchResultsList)
@@ -177,6 +185,7 @@ class HomePage : Fragment() {
             }
             .addOnFailureListener { exception ->
                 searchEditText.setText("No resuslts matching $query")
+//                on failure to fetch data
             }
     }
 
