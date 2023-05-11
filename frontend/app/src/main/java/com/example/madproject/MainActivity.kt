@@ -12,9 +12,11 @@ import com.google.android.material.textview.MaterialTextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 
-import android.util.Log
-import android.widget.Button
-import com.example.madproject.fragments.*
+import com.example.madproject.fragments.AdminDashboard
+import com.example.madproject.fragments.CreatePostFragment
+import com.example.madproject.fragments.GroupListFragment
+import com.example.madproject.fragments.HomePage
+import com.example.madproject.fragments.AllUserNotices
 
 import com.google.firebase.ktx.Firebase
 
@@ -25,8 +27,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         bottomNavigationView = findViewById(R.id.bottom_nav_bar)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, HomePage()).commit()
+
+        bottomNavigationView.selectedItemId = R.id.bottom_nav_bar_home
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -64,8 +70,6 @@ class MainActivity : AppCompatActivity() {
 
         val auth = Firebase.auth
 
-        auth.signOut()
-        auth.signInWithEmailAndPassword("test@gmail.com", "password")
     }
 
     }

@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
 
             android:layout_height="@dimen/text_input_height"
-            android:background="#E7A0F3"
+            android:background="@drawable/edittextround"
             android:backgroundTint="#EED7FD"
             android:drawableLeft="@drawable/baseline_person_outline_24"
             android:hint="  Email"
@@ -51,7 +51,7 @@
         android:id="@+id/loginpwd"
         android:layout_width="379dp"
         android:layout_height="@dimen/text_input_height"
-        android:background="#CBF9FF"
+        android:background="@drawable/edittextround"
         android:backgroundTint="#EED7FD"
         android:drawableLeft="@drawable/baseline_info_24"
         android:ems="10"

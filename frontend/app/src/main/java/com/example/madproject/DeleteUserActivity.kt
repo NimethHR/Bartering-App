@@ -13,6 +13,7 @@ class DeleteUserActivity : AppCompatActivity() {
 
 
     private lateinit var deletebtn : Button
+    private lateinit var gobackbtn : Button
 
     private lateinit var firebaseAuth: FirebaseAuth
     private var user: FirebaseUser? =null
@@ -33,6 +34,13 @@ class DeleteUserActivity : AppCompatActivity() {
         val suid = uid.toString()
 
         deletebtn = findViewById(R.id.deleteuserbtn)
+        gobackbtn = findViewById(R.id.backtoprofile)
+
+        gobackbtn.setOnClickListener(){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
         deletebtn.setOnClickListener {

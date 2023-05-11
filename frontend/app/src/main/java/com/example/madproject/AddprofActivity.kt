@@ -75,7 +75,7 @@ class AddprofActivity : AppCompatActivity() {
                 db.collection("users").document(suid)
                     .set(user)
                     .addOnSuccessListener {
-                        val intent = Intent(this,  UserProfileActivity::class.java)
+                        val intent = Intent(this,  MainActivity::class.java)
                         startActivity(intent)
                         Toast.makeText(this, "Data Added Successfully", Toast.LENGTH_SHORT).show()
                     }
