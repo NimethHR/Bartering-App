@@ -49,7 +49,7 @@ class UpdateprofActivity : AppCompatActivity() {
         updateData()
 
         upbtn.setOnClickListener {
-
+    // sets the data to the fields
             val sUserName = upname.text.toString()
             val sConEmail =upemail.text.toString()
             val spnumb =upnumb.text.toString()

@@ -42,12 +42,12 @@ class DeleteUserActivity : AppCompatActivity() {
         }
 
 
-
+//deletes document and user onclick
         deletebtn.setOnClickListener {
 
 
             val documentPath = "users/${suid}"
-
+// alerts the user that the document is deleted
             dbref.document(documentPath)
                 .delete()
                 .addOnSuccessListener {
@@ -60,7 +60,7 @@ class DeleteUserActivity : AppCompatActivity() {
 
 
 
-
+// alerts user that the account is deleted
             currentuser?.delete()
                 ?.addOnCompleteListener {
                     if (it.isSuccessful){

@@ -16,6 +16,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.ktx.Firebase
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -68,6 +71,7 @@ class RegisterActivity : AppCompatActivity() {
                             val intent = Intent(this, AddprofActivity::class.java)
                             startActivity(intent)
                             Toast.makeText(this, "Successfully Registered", Toast.LENGTH_SHORT).show()
+
 
                         } else {
                             Toast.makeText(this, "Reg Failed", Toast.LENGTH_SHORT).show()

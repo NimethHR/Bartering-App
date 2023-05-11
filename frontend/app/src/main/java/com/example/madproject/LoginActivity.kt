@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
-
+//google sign in
     private fun sigInWithGoogle(){
 
         val signinIntent = googleSignInClient.signInIntent
@@ -93,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
-
+// google sign in results
     private fun results(task : Task<GoogleSignInAccount>){
 
         if (task.isSuccessful){
@@ -110,6 +110,7 @@ class LoginActivity : AppCompatActivity() {
     private fun navigateto(current: GoogleSignInAccount) {
         val logged = GoogleAuthProvider.getCredential(current.idToken,null)
         firebaseAuth.signInWithCredential(logged).addOnCompleteListener{
+            // checks if the user is successfully logged in or not and shows the toast accordingly
             if (it.isSuccessful){
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -125,7 +126,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-
+//checking if user is already logged in or not
     override fun onStart() {
         super.onStart()
 

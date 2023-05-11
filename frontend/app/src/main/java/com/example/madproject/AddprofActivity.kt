@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 //import com.example.userui.databinding.ActivityRegisterBinding
 //import com.example.userui.databinding.ActivitySavepdataBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -78,6 +80,15 @@ class AddprofActivity : AppCompatActivity() {
                         val intent = Intent(this,  MainActivity::class.java)
                         startActivity(intent)
                         Toast.makeText(this, "Data Added Successfully", Toast.LENGTH_SHORT).show()
+
+                        val user = Firebase.auth.currentUser
+
+                        val profileUpdates = userProfileChangeRequest {
+                            displayName = sUserName
+                        }
+
+                        user!!.updateProfile(profileUpdates)
+
                     }
                     .addOnFailureListener{
                         Toast.makeText(this, "Data Adding Failed", Toast.LENGTH_SHORT).show()

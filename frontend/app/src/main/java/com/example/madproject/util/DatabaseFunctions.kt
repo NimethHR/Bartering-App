@@ -20,6 +20,7 @@ import java.util.*
 
 object DatabaseFunctions {
 
+    // create a new group on firestore using given group object
     fun createGroup(newGroup: NewGroup, onComplete: (groupRefId: String?) -> Unit) {
         val db = Firebase.firestore
         val groupRef = db.collection("groups").document()
@@ -40,7 +41,7 @@ object DatabaseFunctions {
         return auth.currentUser
     }
 
-    //add group to user
+    //add group to user's firestore document
     private fun addGroupToUser(newGroup: NewGroup, groupId: String) {
         val db = Firebase.firestore
         val userRef = db.collection("users").document(newGroup.ownerId!!)
@@ -48,6 +49,7 @@ object DatabaseFunctions {
     }
 
 
+    // get current user's document from firestore
     fun getCurrentUserFromFirestore(onComplete: (result: User?) -> Unit) {
         val db = Firebase.firestore
         val currentUser = getCurrentUser()
@@ -67,12 +69,14 @@ object DatabaseFunctions {
             }
     }
 
+    // send a message to a group
     fun sendMessage(message: Message, groupId: String) {
         val db = Firebase.firestore
         val groupRef = db.collection("groups").document(groupId).collection("messages")
         groupRef.add(message)
     }
 
+    // get all messages from a group and listen to new messages
     fun onNewMessage(groupId: String, onNewMessage: (messages: List<Message>) -> Unit) {
         val db = Firebase.firestore
         val query = db.collection("groups").document(groupId).collection("messages")
@@ -116,6 +120,7 @@ object DatabaseFunctions {
         }
     }
 
+    // get a group document by id
     fun getGroup(groupId: String, onComplete: (result: NewGroup?) -> Unit) {
         val db = Firebase.firestore
         val groupRef = db.collection("groups").document(groupId)
@@ -130,6 +135,7 @@ object DatabaseFunctions {
             }
     }
 
+    // update a group description
     fun updateGroup(groupId: String, description: String) {
         val db = Firebase.firestore
         val groupRef = db.collection("groups").document(groupId)
@@ -138,6 +144,7 @@ object DatabaseFunctions {
 
     }
 
+    // delete a group by id
     fun deleteGroup(groupId: String, onComplete: (success: Boolean) -> Unit) {
         val db = Firebase.firestore
 
@@ -172,6 +179,7 @@ object DatabaseFunctions {
         }
     }
 
+    // get user by user's display name
     fun getUserByDisplayName(displayName: String, onComplete: (result: User?) -> Unit) {
         val db = Firebase.firestore
         val userRef = db.collection("users").whereEqualTo("displayName", displayName)
@@ -193,6 +201,7 @@ object DatabaseFunctions {
             }
     }
 
+    // invite a user to a group
     fun inviteUserToGroup(groupId: String, groupName: String, inviteeId: String, inviterId: String, inviterName: String, onComplete: (success: Boolean) -> Unit) {
         val db = Firebase.firestore
 
@@ -212,6 +221,7 @@ object DatabaseFunctions {
         }
     }
 
+    // accept a group invite
     fun acceptGroupInvite(groupId: String, groupName: String, onComplete: (success: Boolean) -> Unit) {
         val db = Firebase.firestore
         val batch = db.batch()
@@ -233,6 +243,7 @@ object DatabaseFunctions {
         }
     }
 
+    // decline a group invite
     fun declineGroupInvite(groupId: String, onComplete: (success: Boolean) -> Unit) {
         val db = Firebase.firestore
         val userRef = db.collection("users").document(getCurrentUser()!!.uid)
@@ -248,6 +259,7 @@ object DatabaseFunctions {
             }
     }
 
+    // get chat activity report
     fun getChatActivity(groupId: String, onComplete: (result: List<Pair<String,Long>>?) -> Unit) {
         val db = Firebase.firestore
         val messagesRef = db.collection("groups").document(groupId).collection("messages")

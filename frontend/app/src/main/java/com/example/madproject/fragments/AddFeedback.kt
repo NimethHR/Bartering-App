@@ -73,7 +73,7 @@ class AddFeedback : Fragment() {
                 }
 //            goto home is here
             Toast.makeText(activity,"Feedback is added", Toast.LENGTH_SHORT).show()
-            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,AddNotice()).addToBackStack(null).commit()
+            parentFragmentManager.beginTransaction().replace(R.id.fragment_container,HomePage()).addToBackStack(null).commit()
                 }
             }
         return view
