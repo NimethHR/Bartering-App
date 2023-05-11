@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_nav_bar_profile -> {
+
                     true
                 }
                 R.id.bottom_nav_bar_dashboard -> {
