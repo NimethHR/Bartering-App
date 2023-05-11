@@ -197,6 +197,11 @@ class EditPostFragment : Fragment() {
                     uploadImage(selectedImageUri!!){success ->
                         if (success){
                             //image uploaded successfully
+                            //image uploaded successfully
+                            db.collection("posts").document(documentId!!)
+                                .update("documentId", documentId, "imageDownloadUrl", imageDownloadUrl)
+
+
                             val viewPostFragment = ViewPostFragment()
                             val args = Bundle().apply {
                                 putString("documentId", documentId)
