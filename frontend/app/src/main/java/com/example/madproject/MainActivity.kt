@@ -15,6 +15,7 @@ import com.google.firebase.auth.ktx.auth
 import android.util.Log
 import android.widget.Button
 import com.example.madproject.fragments.CreatePostFragment
+import com.example.madproject.fragments.GroupListFragment
 import com.example.madproject.fragments.HomePage
 
 import com.google.firebase.ktx.Firebase
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when(item.itemId){
                 R.id.bottom_nav_bar_groups -> {
-//                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, GroupListFragment()).commit()
                     true
                 }
                 R.id.bottom_nav_bar_profile -> {
